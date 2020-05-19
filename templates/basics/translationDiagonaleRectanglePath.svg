@@ -1,0 +1,21 @@
+<?xml version="1.0" standalone="no"?>
+<svg width="5cm" height="3cm"  viewBox="0 0 1920 1080"
+     xmlns="http://www.w3.org/2000/svg">
+  <desc>Example animMotion01 - demonstrate motion animation computations</desc>
+  <rect x="1" y="1" width="1920" height="1080"
+        fill="none" stroke="blue" stroke-width="2" />
+  <!-- Draw the outline of the motion path in blue, along
+          with three small circles at the start, middle and end. -->
+  <path id="path1" d="M 0,0 L 1120,680"
+        fill="none" stroke="blue" stroke-width="0"  />
+  <!-- Here is a triangle which will be moved about the motion path.
+       It is defined with an upright orientation with the base of
+       the triangle centered horizontally just above the origin. -->
+    <rect x="0" y="0" width="800" height="400"
+       fill="yellow" stroke="navy" stroke-width="0"  >
+    <!-- Define the motion path animation -->
+        <animateMotion dur="6s" repeatCount="indefinite" >
+        <mpath href="#path1"/>
+        </animateMotion>
+    </rect>
+</svg>
