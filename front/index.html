@@ -1,86 +1,148 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v4.0.1">
-    <title>Starter Template · Bootstrap</title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Jekyll v4.0.1">
+        <title>Starter Template · Bootstrap</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/starter-template/">
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/starter-template/">
 
-    <!-- Bootstrap core CSS -->
-<link href="assets/dist/css/bootstrap.css" rel="stylesheet">
+        <!-- Bootstrap core CSS -->
+        <link href="assets/dist/css/bootstrap.css" rel="stylesheet">
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="starter-template.css" rel="stylesheet">
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-  <a class="navbar-brand" href="#">backgroundAnimation</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-  </div>
-</nav>
-
-<main role="main" class="container">
-
- <div class="container">
-
-      <div class="row">
-          <div class="col">
-
-<div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-  <div class="btn-group-vertical" role="group" aria-label="First group">
-    <button id="btnRebond" ype="button" class="btn btn-secondary">Rebond</button>
-    <button id="btnRebondRandom" type="button" class="btn btn-secondary">Rebond Random </button>
-    <button id="btnAvecImage" type="button" class="btn btn-secondary">Avec image</button>
-  </div>
-</div>
-        </div>
-          <div class="col-8">
-<div class="embed-responsive embed-responsive-16by9">
-  <div id="svgIframe" class="embed-responsive-item"></div>
-</div>
-          </div>
-      </div>
-  </div>
-</main><!-- /.container -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.js"></script>
-
-
-<script>
-function loadIframe(iframeName, url) {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById(iframeName).innerHTML = xhr.responseText;
-        }
-    };
-    xhr.open("GET", url, true);
-    xhr.send();
+        <style>
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                }
+            }
+        </style>
+        <!-- Custom styles for this template -->
+        <link href="starter-template.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#">backgroundAnimation</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            </div>
+        </nav>
+
+        <main role="main" class="container">
+
+            <div class="container">
+
+                <div class="row">
+                    <div class="col">
+
+                        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+                            <div class="btn-group-vertical" role="group" aria-label="First group">
+
+                                <button id="btnRebond" class="btn btn-primary btn-template"  type="button" data-toggle="collapse" data-target="#collapseRebond" aria-expanded="false" aria-controls="collapseRebond">
+                                    Rebond</button>
+    <button id="btnRebondRandom" class="btn btn-primary btn-template"  type="button" data-toggle="collapse" data-target="#collapseRebondRandom" aria-expanded="false" aria-controls="collapseRebondRandom">
+                                    Rebond random</button>
+
+                                <button id="btnAvecImage" type="button" class="btn btn-secondary btn-template">Avec image</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-3">
+                        <div class="collapse" id="collapseRebond">
+                            <form id="formRebond">
+                                <div class="card">
+                                    <div class ="card card-header">
+                                        Template properties for Rebond
+                                    </div>
+
+
+                                    <div class="card card-body">
+
+                                        <label for="color-picker">Enter color</label>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon3">
+                                                    code
+                                                </span>
+
+                                            </div>
+                                            <input type="text" class="form-control" id="color-picker" aria-describedby="basic-addon3">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+                    <div class="collapse" id="collapseRebondRandom">
+                            <form id="formRebondRandom">
+                                <div class="card">
+                                    <div class ="card card-header">
+                                        Template properties for Rebond Random
+                                    </div>
+
+
+                                    <div class="card card-body">
+
+                                        <label for="color-picker">Enter color</label>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon3">
+                                                    code
+                                                </span>
+
+                                            </div>
+                                            <input type="text" class="form-control" id="color-picker" aria-describedby="basic-addon3">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+                <div class="col-6">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div id="svgIframe" class="embed-responsive-item"></div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        </main><!-- /.container -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="assets/dist/js/bootstrap.bundle.js"></script>
+
+
+        <script>
+            function loadIframe(iframeName, url) {
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById(iframeName).innerHTML = xhr.responseText;
+                    }
+                };
+                xhr.open("GET", url, true);
+                xhr.send();
+            }
 
 function click() {
     console.log("Changed: " + this.id);
@@ -103,13 +165,29 @@ function click() {
     loadIframe("svgIframe", svgPath);
 }
 
-$(".btn").click(click);
+$(".btn-template").click(click);
 click.apply({id: "btnRebond"});
 
+$('form#formRebond input#color-picker').keypress(function (e) {
+    if (e.which == 13) {
+        console.log( "color =",  $(this).val());
+        $("#animatedRect").attr("fill",$(this).val());
+        return false;    // equiv to preventDefault
+    }
+});
 
-    </script>
+$('form#formRebondRandom input#color-picker').keypress(function (e) {
+    if (e.which == 13) {
+        console.log( "color =",  $(this).val());
+        $("#animatedRect").attr("fill",$(this).val());
+        return false;    // equiv to preventDefault
+    }
+});
 
 
-  </body>
+       </script>
+
+
+    </body>
 
 </html>
