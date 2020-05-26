@@ -1,0 +1,4 @@
+#!/bin/bash
+PORT=8000
+echo "Open your favorite web browser at http://localhost:$PORT/front"
+python -m SimpleHTTPServer $PORT
