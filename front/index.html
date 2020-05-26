@@ -23,11 +23,11 @@
     user-select: none;
 }
 
-            @media (min-width: 768px) {
-                .bd-placeholder-img-lg {
-                    font-size: 3.5rem;
+                @media (min-width: 768px) {
+                    .bd-placeholder-img-lg {
+                        font-size: 3.5rem;
+                    }
                 }
-            }
         </style>
         <!-- Custom styles for this template -->
         <link href="starter-template.css" rel="stylesheet">
@@ -43,89 +43,99 @@
             </div>
         </nav>
 
-        <main role="main" class="container">
+        <main role="main" class="container-fluid">
 
-            <div class="container">
+            <div class="container-fluid">
 
                 <div class="row">
                     <div class="col">
 
-                        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-                            <div class="btn-group-vertical" role="group" aria-label="First group">
+                        <div class="accordion" id="accordionTemplate">
+                            <div class="card">
+                                <div class="card-header" id="headingRebond">
+                                    <h2 class="mb-0">
+                                        <button id="btnRebond" class="btn btn-primary btn-template" type="button" data-toggle="collapse" data-target="#collapseRebond" aria-expanded="true" aria-controls="collapseRebond">
+                                            Rebond
+                                        </button>
+                                    </h2>
+                                </div>
 
-                                <button id="btnRebond" class="btn btn-primary btn-template"  type="button" data-toggle="collapse" data-target="#collapseRebond" aria-expanded="false" aria-controls="collapseRebond">
-                                    Rebond</button>
-    <button id="btnRebondRandom" class="btn btn-primary btn-template"  type="button" data-toggle="collapse" data-target="#collapseRebondRandom" aria-expanded="false" aria-controls="collapseRebondRandom">
-                                    Rebond random</button>
+                                <div id="collapseRebond" class="collapse show" aria-labelledby="headingRebond" data-parent="#accordionTemplate">
+                                    <div class="card-body">
+                                        <form id="formRebond">
 
-                                <button id="btnAvecImage" type="button" class="btn btn-secondary btn-template">Avec image</button>
+
+                                            <label for="color-picker">Enter color</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">
+                                                        code
+                                                    </span>
+
+                                                </div>
+                                                <input type="text" class="form-control" id="color-picker" aria-describedby="basic-addon3">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" id="headingRebondRandom">
+                                    <h2 class="mb-0">
+                                        <button id="btnRebondRandom" class="btn btn-primary btn-template collapsed" type="button" data-toggle="collapse" data-target="#collapseRebondRandom" aria-expanded="false" aria-controls="collapseRebondRandom">
+                                            Rebond random
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseRebondRandom" class="collapse" aria-labelledby="headingRebondRandom" data-parent="#accordionTemplate">
+                                    <div class="card-body">
+                                        <form id="formRebondRandom">
+
+
+
+                                            <label for="color-picker">Enter color</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">
+                                                        code
+                                                    </span>
+
+                                                </div>
+                                                <input type="text" class="form-control" id="color-picker" aria-describedby="basic-addon3">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" id="headingAvecImage">
+                                    <h2 class="mb-0">
+                                        <button  id="btnAvecImage" class="btn btn-primary btn-template collapsed" type="button" data-toggle="collapse" data-target="#collapseAvecImage" aria-expanded="false" aria-controls="collapseAvecImage">
+                                            Avec Logo Image
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseAvecImage" class="collapse" aria-labelledby="headingAvecImage" data-parent="#accordionTemplate">
+                                    <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
                     </div>
-                    <div class="col-3">
-                        <div class="collapse" id="collapseRebond">
-                            <form id="formRebond">
-                                <div class="card">
-                                    <div class ="card card-header">
-                                        Template properties for Rebond
-                                    </div>
 
 
-                                    <div class="card card-body">
 
-                                        <label for="color-picker">Enter color</label>
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="basic-addon3">
-                                                    code
-                                                </span>
-
-                                            </div>
-                                            <input type="text" class="form-control" id="color-picker" aria-describedby="basic-addon3">
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
+                    <div class="col-8">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <div id="svgIframe" class="embed-responsive-item"></div>
                         </div>
-                    </div>
-
-
-                    <div class="collapse" id="collapseRebondRandom">
-                            <form id="formRebondRandom">
-                                <div class="card">
-                                    <div class ="card card-header">
-                                        Template properties for Rebond Random
-                                    </div>
-
-
-                                    <div class="card card-body">
-
-                                        <label for="color-picker">Enter color</label>
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="basic-addon3">
-                                                    code
-                                                </span>
-
-                                            </div>
-                                            <input type="text" class="form-control" id="color-picker" aria-describedby="basic-addon3">
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-
-
-                <div class="col-6">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <div id="svgIframe" class="embed-responsive-item"></div>
                     </div>
                 </div>
             </div>
-            </div>
+
 
         </main><!-- /.container -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -185,7 +195,7 @@ $('form#formRebondRandom input#color-picker').keypress(function (e) {
 });
 
 
-       </script>
+        </script>
 
 
     </body>
