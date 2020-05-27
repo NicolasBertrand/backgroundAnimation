@@ -1,16 +1,16 @@
 <?xml version="1.0" standalone="no"?>
 <svg width="800" viewBox="0 0 1920 1080"
      xmlns="http://www.w3.org/2000/svg" version="1.1">
-  <desc>Example rect01 - rectangle with sharp corners</desc>
 
-  <!-- Show outline of viewport using 'rect' element -->
-  <rect x="1" y="1" width="1919" height="1079"
+     <desc>Example rect01 - rectangle with sharp corners</desc>
+
+    <!-- Show outline of viewport using 'rect' element -->
+    <rect x="1" y="1" width="1919" height="1079"
         fill="none" stroke="blue" stroke-width="1"/>
 
-        <circle id="animatedCircle" cx="960" cy="540" r="100"
+    <circle id="animatedCircle" cx="960" cy="540" r="100"
         fill="red" stroke="blue" stroke-width="0"  >
-    <animate attributeName="r" begin="0s" dur="10s"
-        fill="freeze" from="0" to="500" />
-
-</circle>
+        <animate attributeName="r" begin="0s" dur="10s"
+            fill="freeze" from="0" to="500" />
+    </circle>
 </svg>

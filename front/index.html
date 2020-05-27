@@ -142,6 +142,37 @@
                             </div>
                             <!-- Fin d'une template-->
 
+                            <!-- Début d'une template-->
+                            <div class="card">
+                                <div class="card-header" id="headingApparitionTexte">
+                                    <h2 class="mb-0">
+                                        <button id="btnApparitionTexte" class="btn btn-primary btn-template collapsed" type="button" data-toggle="collapse" data-target="#collapseApparitionTexte" aria-expanded="false" aria-controls="collapseApparitionTexte">
+                                            Apparition Texte
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseApparitionTexte" class="collapse" aria-labelledby="headingApparitionTexte" data-parent="#accordionTemplate">
+                                    <div class="card-body">
+                                        <form id="formApparitionTexte">
+
+
+
+                                            <label for="color-picker">Enter color</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">
+                                                        code
+                                                    </span>
+
+                                                </div>
+                                                <input type="text" class="form-control" id="color-picker" aria-describedby="basic-addon3">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Fin d'une template-->
+
                             <div class="card">
                                 <div class="card-header" id="headingAvecImage">
                                     <h2 class="mb-0">
@@ -203,8 +234,12 @@ function click() {
             svgPath ="../templates/avecLogoPng.svg";
             break;
 
-            case 'btnAgrandissementCercle':
+        case 'btnAgrandissementCercle':
             svgPath ="../templates/agrandissementCercle.svg";
+            break;
+
+        case 'btnApparitionTexte':
+            svgPath ="../templates/texteVersionCours.svg";
             break;
     }
 
@@ -235,6 +270,16 @@ $('form#formAgrandissementCercle input#color-picker').keypress(function (e) {
     if (e.which == 13) {
         console.log( "color =",  $(this).val());
         $("#animatedCircle").attr("fill",$(this).val());
+        return false;    // equiv to preventDefault
+    }
+});
+
+$('form#formApparitionTexte input#color-picker').keypress(function (e) {
+    if (e.which == 13) {
+        console.log("avant = ", $("#TextElement").text());
+        console.log( "text =",  $(this).val());
+        $("#TextElement").text($(this).val());
+        console.log("après = ", $("#TextElement").text());
         return false;    // equiv to preventDefault
     }
 });
