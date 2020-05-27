@@ -231,6 +231,13 @@ $('form#formRebondRandom input#color-picker').keypress(function (e) {
     }
 });
 
+$('form#formAgrandissementCercle input#color-picker').keypress(function (e) {
+    if (e.which == 13) {
+        console.log( "color =",  $(this).val());
+        $("#animatedCircle").attr("fill",$(this).val());
+        return false;    // equiv to preventDefault
+    }
+});
 
         </script>
 
