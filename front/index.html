@@ -276,10 +276,18 @@ $('form#formAgrandissementCercle input#color-picker').keypress(function (e) {
 
 $('form#formApparitionTexte input#color-picker').keypress(function (e) {
     if (e.which == 13) {
-        console.log("avant = ", $("#TextElement").text());
-        console.log( "text =",  $(this).val());
-        $("#TextElement").text($(this).val());
-        console.log("après = ", $("#TextElement").text());
+        let message = $(this).val();
+        $('#textElement').contents().filter(
+            function() {
+                return (this.nodeType == 3) && (this.textContent.trim().length > 0)
+            }
+        ).each(
+            function(){
+                console.log("avant = ", this.textContent);
+                this.textContent = message;
+                console.log("après = ", this.textContent);
+            }
+        );
         return false;    // equiv to preventDefault
     }
 });
