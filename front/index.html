@@ -157,7 +157,7 @@
 
 
 
-                                            <label for="color-picker">Enter color</label>
+                                            <label for="text-writer">Enter text</label>
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">
@@ -165,7 +165,7 @@
                                                     </span>
 
                                                 </div>
-                                                <input type="text" class="form-control" id="color-picker" aria-describedby="basic-addon3">
+                                                <input type="text" class="form-control" id="text-writer" aria-describedby="basic-addon3">
                                             </div>
                                         </form>
                                     </div>
@@ -274,7 +274,7 @@ $('form#formAgrandissementCercle input#color-picker').keypress(function (e) {
     }
 });
 
-$('form#formApparitionTexte input#color-picker').keypress(function (e) {
+$('form#formApparitionTexte input#text-writer').keypress(function (e) {
     if (e.which == 13) {
         let message = $(this).val();
         $('#textElement').contents().filter(
