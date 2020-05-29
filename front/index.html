@@ -80,6 +80,7 @@
                                 </div>
                             </div>
 
+                            <!-- Début d'une template-->
                             <div class="card">
                                 <div class="card-header" id="headingRebondRandom">
                                     <h2 class="mb-0">
@@ -108,6 +109,69 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- Fin d'une template-->
+
+                            <!-- Début d'une template-->
+                            <div class="card">
+                                <div class="card-header" id="headingAgrandissementCercle">
+                                    <h2 class="mb-0">
+                                        <button id="btnAgrandissementCercle" class="btn btn-primary btn-template collapsed" type="button" data-toggle="collapse" data-target="#collapseAgrandissementCercle" aria-expanded="false" aria-controls="collapseAgrandissementCercle">
+                                            Agrandissement Cercle
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseAgrandissementCercle" class="collapse" aria-labelledby="headingAgrandissementCercle" data-parent="#accordionTemplate">
+                                    <div class="card-body">
+                                        <form id="formAgrandissementCercle">
+
+
+
+                                            <label for="color-picker">Enter color</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">
+                                                        code
+                                                    </span>
+
+                                                </div>
+                                                <input type="text" class="form-control" id="color-picker" aria-describedby="basic-addon3">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Fin d'une template-->
+
+                            <!-- Début d'une template-->
+                            <div class="card">
+                                <div class="card-header" id="headingApparitionTexte">
+                                    <h2 class="mb-0">
+                                        <button id="btnApparitionTexte" class="btn btn-primary btn-template collapsed" type="button" data-toggle="collapse" data-target="#collapseApparitionTexte" aria-expanded="false" aria-controls="collapseApparitionTexte">
+                                            Apparition Texte
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseApparitionTexte" class="collapse" aria-labelledby="headingApparitionTexte" data-parent="#accordionTemplate">
+                                    <div class="card-body">
+                                        <form id="formApparitionTexte">
+
+
+
+                                            <label for="text-writer">Enter text</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">
+                                                        code
+                                                    </span>
+
+                                                </div>
+                                                <input type="text" class="form-control" id="text-writer" aria-describedby="basic-addon3">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Fin d'une template-->
 
                             <div class="card">
                                 <div class="card-header" id="headingAvecImage">
@@ -169,6 +233,14 @@ function click() {
         case 'btnAvecImage':
             svgPath ="../templates/avecLogoPng.svg";
             break;
+
+        case 'btnAgrandissementCercle':
+            svgPath ="../templates/agrandissementCercle.svg";
+            break;
+
+        case 'btnApparitionTexte':
+            svgPath ="../templates/texteVersionCours.svg";
+            break;
     }
 
     console.log("svgPath: " + svgPath);
@@ -194,6 +266,31 @@ $('form#formRebondRandom input#color-picker').keypress(function (e) {
     }
 });
 
+$('form#formAgrandissementCercle input#color-picker').keypress(function (e) {
+    if (e.which == 13) {
+        console.log( "color =",  $(this).val());
+        $("#animatedCircle").attr("fill",$(this).val());
+        return false;    // equiv to preventDefault
+    }
+});
+
+$('form#formApparitionTexte input#text-writer').keypress(function (e) {
+    if (e.which == 13) {
+        let message = $(this).val();
+        $('#textElement').contents().filter(
+            function() {
+                return (this.nodeType == 3) && (this.textContent.trim().length > 0)
+            }
+        ).each(
+            function(){
+                console.log("avant = ", this.textContent);
+                this.textContent = message;
+                console.log("après = ", this.textContent);
+            }
+        );
+        return false;    // equiv to preventDefault
+    }
+});
 
         </script>
 

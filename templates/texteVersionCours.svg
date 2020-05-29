@@ -1,5 +1,7 @@
 <?xml version="1.0" standalone="no"?>
-<svg width="24cm" height="8cm" viewBox="0 0 1920 1080"
+
+<svg width="800px" viewBox="0 0 1920 1080"
+
      xmlns="http://www.w3.org/2000/svg" version="1.1">
   <desc>Example rect01 - rectangle with sharp corners</desc>
 
@@ -7,7 +9,8 @@
   <rect x="1" y="1" width="1919" height="1079"
         fill="none" stroke="blue" stroke-width="1"/>
 
-    <text id="TextElement" x="1200" y="800"
+    <text id="textElement" x="1200" y="800"
+
     font-family="Verdana" font-size="100" visibility="visible"  >
     Nom Prénom
     <animate attributeName="font-size" begin="0s" dur="5s"
