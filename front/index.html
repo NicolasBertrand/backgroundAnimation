@@ -47,11 +47,19 @@
 
             <div class="container-fluid">
 
+                <!-- Début d'une série de colonnes -->
                 <div class="row">
+
+                    <!-- Début d'une colonne -->
                     <div class="col">
 
+                        <!-- Début d'une pile de carte -->
                         <div class="accordion" id="accordionTemplate">
+
+                            <!-- Début d'une carte dans la pile -->
                             <div class="card">
+
+                                <!-- Entete d'une carte avec le bouton de sélection -->
                                 <div class="card-header" id="headingRebond">
                                     <h2 class="mb-0">
                                         <button id="btnRebond" class="btn btn-primary btn-template" type="button" data-toggle="collapse" data-target="#collapseRebond" aria-expanded="true" aria-controls="collapseRebond">
@@ -60,21 +68,35 @@
                                     </h2>
                                 </div>
 
+                                <!-- Contenu de la carte -->
                                 <div id="collapseRebond" class="collapse show" aria-labelledby="headingRebond" data-parent="#accordionTemplate">
                                     <div class="card-body">
+                                        
+                                        <!-- Début du formulaire de saisie des données spécifiques à cette carte -->
                                         <form id="formRebond">
 
-
+                                            <!-- Première donnée saisie -->
                                             <label for="color-picker">Enter color</label>
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">
                                                         code
                                                     </span>
-
                                                 </div>
                                                 <input type="text" class="form-control" id="color-picker" aria-describedby="basic-addon3">
                                             </div>
+
+                                            <!-- Deuxième donnée saisie -->
+                                            <label for="duration-picker">Enter duration</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">
+                                                        code
+                                                    </span>
+                                                </div>
+                                                <input type="text" class="form-control" id="duration-picker" aria-describedby="basic-addon3">
+                                            </div>
+
                                         </form>
                                     </div>
                                 </div>
@@ -94,7 +116,7 @@
                                         <form id="formRebondRandom">
 
 
-
+                                            <!-- Première donnée saisie -->
                                             <label for="color-picker">Enter color</label>
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
@@ -105,6 +127,19 @@
                                                 </div>
                                                 <input type="text" class="form-control" id="color-picker" aria-describedby="basic-addon3">
                                             </div>
+
+                                            <!-- Deuxième donnée saisie -->
+                                            <label for="duration-picker">Enter duration</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">
+                                                        code
+                                                    </span>
+                                                </div>
+                                                <input type="text" class="form-control" id="duration-picker" aria-describedby="basic-addon3">
+                                            </div>
+
+
                                         </form>
                                     </div>
                                 </div>
@@ -136,6 +171,19 @@
                                                 </div>
                                                 <input type="text" class="form-control" id="color-picker" aria-describedby="basic-addon3">
                                             </div>
+
+                            <!-- Deuxième donnée saisie -->
+                            <label for="duration-picker">Enter duration</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon3">
+                                        code
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control" id="duration-picker" aria-describedby="basic-addon3">
+                            </div>
+
+
                                         </form>
                                     </div>
                                 </div>
@@ -258,6 +306,15 @@ $('form#formRebond input#color-picker').keypress(function (e) {
     }
 });
 
+$('form#formRebond input#duration-picker').keypress(function (e) {
+    if (e.which == 13) {
+        console.log( "duration =",  $(this).val());
+        console.log( "current duration = ", $("#animateDuration").attr("dur"));
+        $("#animateDuration").attr("dur",$(this).val());
+        return false;    // equiv to preventDefault
+    }
+});
+
 $('form#formRebondRandom input#color-picker').keypress(function (e) {
     if (e.which == 13) {
         console.log( "color =",  $(this).val());
@@ -266,10 +323,28 @@ $('form#formRebondRandom input#color-picker').keypress(function (e) {
     }
 });
 
+$('form#formRebondRandom input#duration-picker').keypress(function (e) {
+    if (e.which == 13) {
+        console.log( "duration =",  $(this).val());
+        console.log( "current duration = ", $("#animateDuration").attr("dur"));
+        $("#animateDuration").attr("dur",$(this).val());
+        return false;    // equiv to preventDefault
+    }
+});
+
 $('form#formAgrandissementCercle input#color-picker').keypress(function (e) {
     if (e.which == 13) {
         console.log( "color =",  $(this).val());
         $("#animatedCircle").attr("fill",$(this).val());
+        return false;    // equiv to preventDefault
+    }
+});
+
+$('form#formAgrandissementCercle input#duration-picker').keypress(function (e) {
+    if (e.which == 13) {
+        console.log( "duration =",  $(this).val());
+        console.log( "current duration = ", $("#animateDuration").attr("dur"));
+        $("#animateDuration").attr("dur",$(this).val());
         return false;    // equiv to preventDefault
     }
 });
