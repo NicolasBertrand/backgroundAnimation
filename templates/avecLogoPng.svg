@@ -1,4 +1,5 @@
 <svg width="800px"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <rect id="background" x="0" y="0" width="1920" height="1080" fill="white"/>
   <image href="https://upload.wikimedia.org/wikipedia/fr/thumb/c/cc/Institut_national_polytechnique_de_Toulouse_%28logo%29.svg/1200px-Institut_national_polytechnique_de_Toulouse_%28logo%29.svg.png" height="200" width="200"/>
 </svg>

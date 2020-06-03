@@ -4,6 +4,7 @@
   <desc>Example rect01 - rectangle with sharp corners</desc>
 
   <!-- Show outline of viewport using 'rect' element -->
+  <rect id="background" x="0" y="0" width="1920" height="1080" fill="white"/>
   <rect x="0" y="0" width="1919" height="1079" fill="none" stroke="blue" stroke-width="1"/>
 
         <path id="path1" d="M 0,440 L 380,878 860,0 1340,878 1718,440 1340,0 860,878 380,0 0,440 "
