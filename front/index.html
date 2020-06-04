@@ -13,6 +13,8 @@
         <!-- Bootstrap core CSS -->
         <link href="assets/dist/css/bootstrap.css" rel="stylesheet">
 
+        <link href="assets/dist/css/bootstrap-colorpicker.css" rel="stylesheet">
+
         <style>
 .bd-placeholder-img {
     font-size: 1.125rem;
@@ -49,7 +51,10 @@
 
                 <div class="row">
                     <div class="col">
-
+<div class="demo">
+      <h1>Bootstrap Colorpicker Demo (with Bootstrap)</h1>
+      <input id="demo-input" type="text" value="rgb(255, 128, 0)" />
+  </div>
                         <div class="accordion" id="accordionTemplate">
                             <div class="card">
                                 <div class="card-header" id="headingRebond">
@@ -205,7 +210,18 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="assets/dist/js/bootstrap.bundle.js"></script>
 
+  <script src="assets/dist/js/bootstrap-colorpicker.js"></script>
+  <script>
+    $(function () {
+      // Basic instantiation:
+      $('#demo-input').colorpicker();
 
+      // Example using an event, to change the color of the #demo div background:
+      $('#demo-input').on('colorpickerChange', function(event) {
+        $('#demo').css('background-color', event.color.toString());
+      });
+    });
+  </script>
         <script>
             function loadIframe(iframeName, url) {
                 var xhr = new XMLHttpRequest();
