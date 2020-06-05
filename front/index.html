@@ -12,6 +12,8 @@
 
         <!-- Bootstrap core CSS -->
         <link href="assets/dist/css/bootstrap.css" rel="stylesheet">
+        <!-- Adding colorpicker CSS -->
+        <link href="dist/css/bootstrap-colorpicker.css" rel="stylesheet">
 
         <style>
 .bd-placeholder-img {
@@ -76,14 +78,25 @@
                                         <form id="formRebond">
 
                                             <!-- Première donnée saisie -->
-                                            <label for="color-picker">Enter color</label>
+                                            <label for="color-picker-square">Enter square color</label>
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">
                                                         code
                                                     </span>
                                                 </div>
-                                                <input type="text" class="form-control" id="color-picker" aria-describedby="basic-addon3">
+                                                <input type="text" class="form-control" id="color-picker-square" aria-describedby="basic-addon3">
+                                            </div>
+
+                                             <!-- Première donnée saisie -->
+                                            <label for="color-picker-background">Enter background color</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">
+                                                        code
+                                                    </span>
+                                                </div>
+                                                <input type="text" class="form-control" id="color-picker-background" aria-describedby="basic-addon3">
                                             </div>
 
                                             <!-- Deuxième donnée saisie -->
@@ -126,6 +139,17 @@
 
                                                 </div>
                                                 <input type="text" class="form-control" id="color-picker" aria-describedby="basic-addon3">
+                                            </div>
+
+                                            <!-- Première donnée saisie -->
+                                            <label for="color-picker-background">Enter background color</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">
+                                                        code
+                                                    </span>
+                                                </div>
+                                                <input type="text" class="form-control" id="color-picker-background" aria-describedby="basic-addon3">
                                             </div>
 
                                             <!-- Deuxième donnée saisie -->
@@ -172,6 +196,17 @@
                                                 <input type="text" class="form-control" id="color-picker" aria-describedby="basic-addon3">
                                             </div>
 
+                                            <!-- Première donnée saisie -->
+                                            <label for="color-picker-background">Enter background color</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">
+                                                        code
+                                                    </span>
+                                                </div>
+                                                <input type="text" class="form-control" id="color-picker-background" aria-describedby="basic-addon3">
+                                            </div>
+
                                             <!-- Deuxième donnée saisie -->
                                             <label for="duration-picker">Enter duration</label>
                                             <div class="input-group mb-3">
@@ -207,13 +242,16 @@
 
                                             <label for="text-writer">Enter text</label>
                                             <div class="input-group mb-3">
+                                                
+
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">
                                                         code
                                                     </span>
 
                                                 </div>
-                                                <input type="text" class="form-control" id="text-writer" aria-describedby="basic-addon3">
+                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                <!-- <input type="text" class="form-control" id="text-writer" aria-describedby="basic-addon3"> -->
                                             </div>
                                         </form>
                                     </div>
@@ -221,6 +259,8 @@
                             </div>
                             <!-- Fin d'une template-->
 
+
+                            <!-- Début d'une template-->
                             <div class="card">
                                 <div class="card-header" id="headingAvecImage">
                                     <h2 class="mb-0">
@@ -236,10 +276,29 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    
+                
+                    <!-- Fin d'une template-->
+                        
+                        <!-- Début d'une template-->
+                            <div class="card">
+                                <div class="card-header" id="headingRebondLogo>
+                                    <h2 class="mb-0">
+                                        <button id="btnRebondLogo" class="btn btn-primary btn-template collapsed" type="button" data-toggle="collapse" data-target="#collapseRebondLogo" aria-expanded="false" aria-controls="collapseRebondLogo">
+                                            Rebond Logo
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseRebondLogo" class="collapse" aria-labelledby="headingRebondLogo" data-parent="#accordionTemplate">
+                                    <div class="card-body">
+                                        <form id="formRebondLogo">
 
-
-
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Fin d'une template-->
+                </div>
                     <div class="col-8">
                         <div class="embed-responsive embed-responsive-16by9">
                             <div id="svgIframe" class="embed-responsive-item"></div>
@@ -278,6 +337,10 @@ function click() {
             svgPath ="../templates/rebondRandom.svg";
             break;
 
+        case 'btnRebondLogo':
+            svgPath ="../templates/logoRebond.svg";
+            break;
+        
         case 'btnAvecImage':
             svgPath ="../templates/avecLogoPng.svg";
             break;
@@ -298,10 +361,18 @@ function click() {
 $(".btn-template").click(click);
 click.apply({id: "btnRebond"});
 
-$('form#formRebond input#color-picker').keypress(function (e) {
+$('form#formRebond input#color-picker-square').keypress(function (e) {
     if (e.which == 13) {
         console.log( "color =",  $(this).val());
         $("#animatedRect").attr("fill",$(this).val());
+        return false;    // equiv to preventDefault
+    }
+});
+
+$('form#formRebond input#color-picker-background').keypress(function (e) {
+    if (e.which == 13) {
+        console.log( "color =",  $(this).val());
+        $("#background").attr("fill",$(this).val());
         return false;    // equiv to preventDefault
     }
 });
@@ -323,6 +394,14 @@ $('form#formRebondRandom input#color-picker').keypress(function (e) {
     }
 });
 
+$('form#formRebondRandom input#color-picker-background').keypress(function (e) {
+    if (e.which == 13) {
+        console.log( "color =",  $(this).val());
+        $("#background").attr("fill",$(this).val());
+        return false;    // equiv to preventDefault
+    }
+});
+
 $('form#formRebondRandom input#duration-picker').keypress(function (e) {
     if (e.which == 13) {
         console.log( "duration =",  $(this).val());
@@ -340,6 +419,14 @@ $('form#formAgrandissementCercle input#color-picker').keypress(function (e) {
     }
 });
 
+$('form#formAgrandissementCercle input#color-picker-background').keypress(function (e) {
+    if (e.which == 13) {
+        console.log( "color =",  $(this).val());
+        $("#background").attr("fill",$(this).val());
+        return false;    // equiv to preventDefault
+    }
+});
+
 $('form#formAgrandissementCercle input#duration-picker').keypress(function (e) {
     if (e.which == 13) {
         console.log( "duration =",  $(this).val());
@@ -349,7 +436,8 @@ $('form#formAgrandissementCercle input#duration-picker').keypress(function (e) {
     }
 });
 
-$('form#formApparitionTexte input#text-writer').keypress(function (e) {
+// $('form#formApparitionTexte input#text-writer').keypress(function (e) {
+$('form#formApparitionTexte textarea#exampleFormControlTextarea1').keypress(function (e) {
     if (e.which == 13) {
         let message = $(this).val();
         $('#textElement').contents().filter(
@@ -363,7 +451,7 @@ $('form#formApparitionTexte input#text-writer').keypress(function (e) {
                 console.log("après = ", this.textContent);
             }
         );
-        return false;    // equiv to preventDefault
+        return true;    // equiv to preventDefault
     }
 });
 
