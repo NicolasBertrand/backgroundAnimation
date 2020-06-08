@@ -11,14 +11,14 @@
     <text id="textElement" x="1200" y="800"
     font-family="Verdana" font-size="100" visibility="visible"  >
     Nom Prénom
-    <animate id="first" attributeName="font-size" begin="0s" dur="5s"
-        fill="freeze" from="0" to="50" repeatCount="indefinite"/>
-    <animate attributeName="opacity" begin="0s" dur="5s"
-        fill="freeze" from="0" to="1" repeatCount="indefinite"/> 
-    <animate id="last" attributeName="opacity" begin="10s" dur="5s"
-        fill="freeze" from="1" to="0" repeatCount="indefinite"/>
-    <animate attributeName="font-size" begin="10s" dur="5s"
-        fill="freeze" from="50" to="100" repeatCount="indefinite"/>
+    <animate id="first" attributeName="font-size" begin="0s;last.end" dur="5s"
+        fill="freeze" from="0" to="50" />
+    <animate attributeName="opacity" begin="0s;last.end" dur="5s"
+        fill="freeze" from="0" to="1" /> 
+    <animate id="last" attributeName="opacity" begin="10s;first.end+5s" dur="5s"
+        fill="freeze" from="1" to="0" />
+    <animate attributeName="font-size" begin="10s;first.end+5s" dur="5s"
+        fill="freeze" from="50" to="100"/>
 
 </text>
 </svg>
