@@ -12,18 +12,20 @@
 
         <!-- Bootstrap core CSS -->
         <link href="assets/dist/css/bootstrap.css" rel="stylesheet">
+        <!-- Adding colorpicker CSS -->
+        <link href="dist/css/bootstrap-colorpicker.css" rel="stylesheet">
 
         <link href="assets/dist/css/bootstrap-colorpicker.css" rel="stylesheet">
 
         <style>
-.bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
+                .bd-placeholder-img {
+                    font-size: 1.125rem;
+                    text-anchor: middle;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                }
 
                 @media (min-width: 768px) {
                     .bd-placeholder-img-lg {
@@ -49,14 +51,21 @@
 
             <div class="container-fluid">
 
+                <!-- Début d'une série de colonnes -->
                 <div class="row">
+
+                    <!-- Début d'une colonne -->
                     <div class="col">
 <div class="demo">
       <h1>Bootstrap Colorpicker Demo (with Bootstrap)</h1>
       <input id="demo-input" type="text" value="rgb(255, 128, 0)" />
   </div>
                         <div class="accordion" id="accordionTemplate">
+
+                            <!-- Début d'une carte dans la pile -->
                             <div class="card">
+
+                                <!-- Entete d'une carte avec le bouton de sélection -->
                                 <div class="card-header" id="headingRebond">
                                     <h2 class="mb-0">
                                         <button id="btnRebond" class="btn btn-primary btn-template" type="button" data-toggle="collapse" data-target="#collapseRebond" aria-expanded="true" aria-controls="collapseRebond">
@@ -65,21 +74,46 @@
                                     </h2>
                                 </div>
 
+                                <!-- Contenu de la carte -->
                                 <div id="collapseRebond" class="collapse show" aria-labelledby="headingRebond" data-parent="#accordionTemplate">
                                     <div class="card-body">
+
+                                        <!-- Début du formulaire de saisie des données spécifiques à cette carte -->
                                         <form id="formRebond">
 
-
-                                            <label for="color-picker">Enter color</label>
+                                            <!-- Première donnée saisie -->
+                                            <label for="color-picker-square">Enter square color</label>
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">
                                                         code
                                                     </span>
-
                                                 </div>
-                                                <input type="text" class="form-control" id="color-picker" aria-describedby="basic-addon3">
+                                                <input type="text" class="form-control" id="color-picker-square" aria-describedby="basic-addon3">
                                             </div>
+
+                                             <!-- Première donnée saisie -->
+                                            <label for="color-picker-background">Enter background color</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">
+                                                        code
+                                                    </span>
+                                                </div>
+                                                <input type="text" class="form-control" id="color-picker-background" aria-describedby="basic-addon3">
+                                            </div>
+
+                                            <!-- Deuxième donnée saisie -->
+                                            <label for="duration-picker">Enter duration</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">
+                                                        code
+                                                    </span>
+                                                </div>
+                                                <input type="text" class="form-control" id="duration-picker" aria-describedby="basic-addon3">
+                                            </div>
+
                                         </form>
                                     </div>
                                 </div>
@@ -99,7 +133,7 @@
                                         <form id="formRebondRandom">
 
 
-
+                                            <!-- Première donnée saisie -->
                                             <label for="color-picker">Enter color</label>
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
@@ -110,6 +144,30 @@
                                                 </div>
                                                 <input type="text" class="form-control" id="color-picker" aria-describedby="basic-addon3">
                                             </div>
+
+                                            <!-- Première donnée saisie -->
+                                            <label for="color-picker-background">Enter background color</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">
+                                                        code
+                                                    </span>
+                                                </div>
+                                                <input type="text" class="form-control" id="color-picker-background" aria-describedby="basic-addon3">
+                                            </div>
+
+                                            <!-- Deuxième donnée saisie -->
+                                            <label for="duration-picker">Enter duration</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">
+                                                        code
+                                                    </span>
+                                                </div>
+                                                <input type="text" class="form-control" id="duration-picker" aria-describedby="basic-addon3">
+                                            </div>
+
+
                                         </form>
                                     </div>
                                 </div>
@@ -141,6 +199,30 @@
                                                 </div>
                                                 <input type="text" class="form-control" id="color-picker" aria-describedby="basic-addon3">
                                             </div>
+
+                                            <!-- Première donnée saisie -->
+                                            <label for="color-picker-background">Enter background color</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">
+                                                        code
+                                                    </span>
+                                                </div>
+                                                <input type="text" class="form-control" id="color-picker-background" aria-describedby="basic-addon3">
+                                            </div>
+
+                                            <!-- Deuxième donnée saisie -->
+                                            <label for="duration-picker">Enter duration</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">
+                                                        code
+                                                   </span>
+                                                </div>
+                                                <input type="text" class="form-control" id="duration-picker" aria-describedby="basic-addon3">
+                                            </div>
+
+
                                         </form>
                                     </div>
                                 </div>
@@ -164,13 +246,16 @@
 
                                             <label for="text-writer">Enter text</label>
                                             <div class="input-group mb-3">
+
+
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">
                                                         code
                                                     </span>
 
                                                 </div>
-                                                <input type="text" class="form-control" id="text-writer" aria-describedby="basic-addon3">
+                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                <!-- <input type="text" class="form-control" id="text-writer" aria-describedby="basic-addon3"> -->
                                             </div>
                                         </form>
                                     </div>
@@ -178,6 +263,8 @@
                             </div>
                             <!-- Fin d'une template-->
 
+
+                            <!-- Début d'une template-->
                             <div class="card">
                                 <div class="card-header" id="headingAvecImage">
                                     <h2 class="mb-0">
@@ -193,10 +280,29 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
 
 
+                    <!-- Fin d'une template-->
 
+                        <!-- Début d'une template-->
+                            <div class="card">
+                                <div class="card-header" id="headingRebondLogo>
+                                    <h2 class="mb-0">
+                                        <button id="btnRebondLogo" class="btn btn-primary btn-template collapsed" type="button" data-toggle="collapse" data-target="#collapseRebondLogo" aria-expanded="false" aria-controls="collapseRebondLogo">
+                                            Rebond Logo
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseRebondLogo" class="collapse" aria-labelledby="headingRebondLogo" data-parent="#accordionTemplate">
+                                    <div class="card-body">
+                                        <form id="formRebondLogo">
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Fin d'une template-->
+                </div>
                     <div class="col-8">
                         <div class="embed-responsive embed-responsive-16by9">
                             <div id="svgIframe" class="embed-responsive-item"></div>
@@ -205,10 +311,17 @@
                 </div>
             </div>
 
+            <div class="demo">
+                <h1>Bootstrap Colorpicker Demo (with Bootstrap)</h1>
+                <input id="demo-input" type="text" value="rgb(255, 128, 0)" />
+            </div>
+
 
         </main><!-- /.container -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="assets/dist/js/bootstrap.bundle.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+        <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+        <script src="assets/dist/js/bootstrap.bundle.js"></script>
 
   <script src="assets/dist/js/bootstrap-colorpicker.js"></script>
   <script>
@@ -223,6 +336,19 @@
     });
   </script>
         <script>
+
+            $(function () {
+                // Basic instantiation:
+                $('#demo-input').colorpicker();
+
+                // Example using an event, to change the color of the #demo div background:
+                $('#demo-input').on('colorpickerChange', function (event) {
+                    $('#demo').css('background-color', event.color.toString());
+                });
+            });
+
+
+
             function loadIframe(iframeName, url) {
                 var xhr = new XMLHttpRequest();
                 xhr.onreadystatechange = function() {
@@ -234,79 +360,135 @@
                 xhr.send();
             }
 
-function click() {
-    console.log("Changed: " + this.id);
-    var svgPath="";
-    switch(this.id) {
-        case 'btnRebond':
-            svgPath ="../templates/rebond.svg";
-            break;
+            function click() {
+                console.log("Changed: " + this.id);
+                var svgPath="";
+                switch(this.id) {
+                    case 'btnRebond':
+                        svgPath ="../templates/rebond.svg";
+                        break;
 
-        case 'btnRebondRandom':
-            svgPath ="../templates/rebondRandom.svg";
-            break;
+                    case 'btnRebondRandom':
+                        svgPath ="../templates/rebondRandom.svg";
+                        break;
 
-        case 'btnAvecImage':
-            svgPath ="../templates/avecLogoPng.svg";
-            break;
+                    case 'btnRebondLogo':
+                        svgPath ="../templates/logoRebond.svg";
+                        break;
 
-        case 'btnAgrandissementCercle':
-            svgPath ="../templates/agrandissementCercle.svg";
-            break;
+                    case 'btnAvecImage':
+                        svgPath ="../templates/avecLogoPng.svg";
+                        break;
 
-        case 'btnApparitionTexte':
-            svgPath ="../templates/texteVersionCours.svg";
-            break;
-    }
+                    case 'btnAgrandissementCercle':
+                        svgPath ="../templates/agrandissementCercle.svg";
+                        break;
 
-    console.log("svgPath: " + svgPath);
-    loadIframe("svgIframe", svgPath);
-}
+                    case 'btnApparitionTexte':
+                        svgPath ="../templates/texteVersionCours.svg";
+                        break;
+                }
 
-$(".btn-template").click(click);
-click.apply({id: "btnRebond"});
-
-$('form#formRebond input#color-picker').keypress(function (e) {
-    if (e.which == 13) {
-        console.log( "color =",  $(this).val());
-        $("#animatedRect").attr("fill",$(this).val());
-        return false;    // equiv to preventDefault
-    }
-});
-
-$('form#formRebondRandom input#color-picker').keypress(function (e) {
-    if (e.which == 13) {
-        console.log( "color =",  $(this).val());
-        $("#animatedRect").attr("fill",$(this).val());
-        return false;    // equiv to preventDefault
-    }
-});
-
-$('form#formAgrandissementCercle input#color-picker').keypress(function (e) {
-    if (e.which == 13) {
-        console.log( "color =",  $(this).val());
-        $("#animatedCircle").attr("fill",$(this).val());
-        return false;    // equiv to preventDefault
-    }
-});
-
-$('form#formApparitionTexte input#text-writer').keypress(function (e) {
-    if (e.which == 13) {
-        let message = $(this).val();
-        $('#textElement').contents().filter(
-            function() {
-                return (this.nodeType == 3) && (this.textContent.trim().length > 0)
+                console.log("svgPath: " + svgPath);
+                loadIframe("svgIframe", svgPath);
             }
-        ).each(
-            function(){
-                console.log("avant = ", this.textContent);
-                this.textContent = message;
-                console.log("après = ", this.textContent);
-            }
-        );
-        return false;    // equiv to preventDefault
-    }
-});
+
+            $(".btn-template").click(click);
+            click.apply({id: "btnRebond"});
+
+            $('form#formRebond input#color-picker-square').keypress(function (e) {
+                if (e.which == 13) {
+                    console.log( "color =",  $(this).val());
+                    $("#animatedRect").attr("fill",$(this).val());
+                    return false;    // equiv to preventDefault
+                }
+            });
+
+            $('form#formRebond input#color-picker-background').keypress(function (e) {
+                if (e.which == 13) {
+                    console.log( "color =",  $(this).val());
+                    $("#background").attr("fill",$(this).val());
+                    return false;    // equiv to preventDefault
+                }
+            });
+
+            $('form#formRebond input#duration-picker').keypress(function (e) {
+                if (e.which == 13) {
+                    console.log( "duration =",  $(this).val());
+                    console.log( "current duration = ", $("#animateDuration").attr("dur"));
+                    $("#animateDuration").attr("dur",$(this).val());
+                    return false;    // equiv to preventDefault
+                }
+            });
+
+            $('form#formRebondRandom input#color-picker').keypress(function (e) {
+                if (e.which == 13) {
+                    console.log( "color =",  $(this).val());
+                    $("#animatedRect").attr("fill",$(this).val());
+                    return false;    // equiv to preventDefault
+                }
+            });
+
+            $('form#formRebondRandom input#color-picker-background').keypress(function (e) {
+                if (e.which == 13) {
+                    console.log( "color =",  $(this).val());
+                    $("#background").attr("fill",$(this).val());
+                    return false;    // equiv to preventDefault
+                }
+            });
+
+            $('form#formRebondRandom input#duration-picker').keypress(function (e) {
+                if (e.which == 13) {
+                    console.log( "duration =",  $(this).val());
+                    console.log( "current duration = ", $("#animateDuration").attr("dur"));
+                    $("#animateDuration").attr("dur",$(this).val());
+                    return false;    // equiv to preventDefault
+                }
+            });
+
+            $('form#formAgrandissementCercle input#color-picker').keypress(function (e) {
+                if (e.which == 13) {
+                    console.log( "color =",  $(this).val());
+                    $("#animatedCircle").attr("fill",$(this).val());
+                    return false;    // equiv to preventDefault
+                }
+            });
+
+            $('form#formAgrandissementCercle input#color-picker-background').keypress(function (e) {
+                if (e.which == 13) {
+                    console.log( "color =",  $(this).val());
+                    $("#background").attr("fill",$(this).val());
+                    return false;    // equiv to preventDefault
+                }
+            });
+
+            $('form#formAgrandissementCercle input#duration-picker').keypress(function (e) {
+                if (e.which == 13) {
+                    console.log( "duration =",  $(this).val());
+                    console.log( "current duration = ", $("#animateDuration").attr("dur"));
+                    $("#animateDuration").attr("dur",$(this).val());
+                    return false;    // equiv to preventDefault
+                }
+            });
+
+            // $('form#formApparitionTexte input#text-writer').keypress(function (e) {
+            $('form#formApparitionTexte textarea#exampleFormControlTextarea1').keypress(function (e) {
+                if (e.which == 13) {
+                    let message = $(this).val();
+                    $('#textElement').contents().filter(
+                        function() {
+                            return (this.nodeType == 3) && (this.textContent.trim().length > 0)
+                        }
+                    ).each(
+                        function(){
+                            console.log("avant = ", this.textContent);
+                            this.textContent = message;
+                            console.log("après = ", this.textContent);
+                        }
+                    );
+                    return true;    // equiv to preventDefault
+                }
+            });
 
         </script>
 

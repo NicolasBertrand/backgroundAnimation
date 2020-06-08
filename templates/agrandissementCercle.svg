@@ -5,12 +5,13 @@
      <desc>Example rect01 - rectangle with sharp corners</desc>
 
     <!-- Show outline of viewport using 'rect' element -->
+    <rect id="background" x="0" y="0" width="1920" height="1080" fill="white"/>
     <rect x="1" y="1" width="1919" height="1079"
         fill="none" stroke="blue" stroke-width="1"/>
 
     <circle id="animatedCircle" cx="960" cy="540" r="100"
         fill="red" stroke="blue" stroke-width="0"  >
-        <animate attributeName="r" begin="0s" dur="10s"
-            fill="freeze" from="0" to="500" />
+        <animate id="animateDuration" attributeName="r" begin="0s" dur="10s"
+            fill="freeze" from="0" to="500" repeatCount="indefinite"/>
     </circle>
 </svg>
