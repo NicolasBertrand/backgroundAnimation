@@ -282,27 +282,52 @@
                         </div>
 
 
-                    <!-- Fin d'une template-->
+                        <!-- Fin d'une template-->
 
                         <!-- Début d'une template-->
-                            <div class="card">
-                                <div class="card-header" id="headingRebondLogo>
-                                    <h2 class="mb-0">
-                                        <button id="btnRebondLogo" class="btn btn-primary btn-template collapsed" type="button" data-toggle="collapse" data-target="#collapseRebondLogo" aria-expanded="false" aria-controls="collapseRebondLogo">
-                                            Rebond Logo
-                                        </button>
-                                    </h2>
-                                </div>
-                                <div id="collapseRebondLogo" class="collapse" aria-labelledby="headingRebondLogo" data-parent="#accordionTemplate">
-                                    <div class="card-body">
-                                        <form id="formRebondLogo">
+                        <div class="card">
+                            <div class="card-header" id="headingRebondLogo">
+                                <h2 class="mb-0">
+                                    <button id="btnRebondLogo" class="btn btn-primary btn-template collapsed" type="button" data-toggle="collapse" data-target="#collapseRebondLogo" aria-expanded="false" aria-controls="collapseRebondLogo">
+                                                Rebond Logo
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseRebondLogo" class="collapse" aria-labelledby="headingRebondLogo" data-parent="#accordionTemplate">
+                                <div class="card-body">
+                                    <form id="formRebondLogo">
 
-                                        </form>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
-                            <!-- Fin d'une template-->
-                </div>
+                        </div>
+                        <!-- Fin d'une template-->
+
+                        <!-- Début d'une template-->
+                        <div class="card">
+                            <div class="card-header" id="headingBasics">
+                                <h2 class="mb-0">
+                                    <button id="btnBasics" class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseBasics" aria-expanded="false" aria-controls="collapseBasics">
+                                        Template de base
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseBasics" class="collapse" aria-labelledby="headingBasics" data-parent="#accordionTemplate">
+                                <div class="card-body">
+                                     <button id="btnBasicsOne" class="btn basics-template" type="button" >
+                                        Basic One
+                                    </button>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Fin d'une template-->
+
+
+                    </div>
                     <div class="col-8">
                         <div class="embed-responsive embed-responsive-16by9">
                             <div id="svgIframe" class="embed-responsive-item"></div>
@@ -360,6 +385,8 @@
                 xhr.send();
             }
 
+
+
             function click() {
                 console.log("Changed: " + this.id);
                 var svgPath="";
@@ -387,6 +414,9 @@
                     case 'btnApparitionTexte':
                         svgPath ="../templates/texteVersionCours.svg";
                         break;
+                    case 'btnBasics':
+                        break;
+
                 }
 
                 console.log("svgPath: " + svgPath);
@@ -395,6 +425,21 @@
 
             $(".btn-template").click(click);
             click.apply({id: "btnRebond"});
+
+
+$(".basics-template").on('click', function(event) {
+    console.log("Changed Basics: " + this.id);
+    var svgPath="";
+    switch(this.id) {
+        case 'btnBasicsOne':
+            svgPath ="../templates/basics/translationHautBasRectangleAnimate.svg";
+            break;
+
+    }
+    console.log("svgPath: " + svgPath);
+    loadIframe("svgIframe", svgPath);
+
+            });
 
             $('form#formRebond input#color-picker-square').keypress(function (e) {
                 if (e.which == 13) {
