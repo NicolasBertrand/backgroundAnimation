@@ -107,14 +107,10 @@
                                             </div>
 
                                             <!-- Deuxième donnée saisie -->
-                                            <label for="duration-picker">Enter duration</label>
+                                            <label for="duration-picker">Choose duration</label>
                                             <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon3">
-                                                        code
-                                                    </span>
-                                                </div>
-                                                <input type="text" class="form-control" id="duration-picker" aria-describedby="basic-addon3">
+                                                <!--<input type="text" class="form-control" id="duration-picker" aria-describedby="basic-addon3"> -->
+                                                <input type="range" class="custom-range" min="1" max="10" id="duration-picker">
                                             </div>
 
                                         </form>
@@ -161,14 +157,10 @@
                                             </div>
 
                                             <!-- Deuxième donnée saisie -->
-                                            <label for="duration-picker">Enter duration</label>
+                                            <label for="duration-picker">Choose duration</label>
                                             <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon3">
-                                                        code
-                                                    </span>
-                                                </div>
-                                                <input type="text" class="form-control" id="duration-picker" aria-describedby="basic-addon3">
+                                                <!--<input type="text" class="form-control" id="duration-picker" aria-describedby="basic-addon3"> -->
+                                                <input type="range" class="custom-range" min="1" max="10" id="duration-picker">
                                             </div>
 
 
@@ -187,7 +179,7 @@
                                         </button>
                                     </h2>
                                 </div>
-                                <label for="text-writer">Un cercle dont le rayon augment est affiché. Vous pouvez changer la couleur du carré et du fond et la vitesse de déplacement de l'objet.</label>
+                                <label for="text-writer">Un cercle dont le rayon augmente est affiché. Vous pouvez changer la couleur du carré et du fond et la vitesse de déplacement de l'objet.</label>
                                 <div id="collapseAgrandissementCercle" class="collapse" aria-labelledby="headingAgrandissementCercle" data-parent="#accordionTemplate">
                                     <div class="card-body">
                                         <form id="formAgrandissementCercle">
@@ -217,14 +209,10 @@
                                             </div>
 
                                             <!-- Deuxième donnée saisie -->
-                                            <label for="duration-picker">Enter duration</label>
+                                            <label for="duration-picker">Choose duration</label>
                                             <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon3">
-                                                        code
-                                                   </span>
-                                                </div>
-                                                <input type="text" class="form-control" id="duration-picker" aria-describedby="basic-addon3">
+                                                <!--<input type="text" class="form-control" id="duration-picker" aria-describedby="basic-addon3"> -->
+                                                <input type="range" class="custom-range" min="1" max="10" id="duration-picker">
                                             </div>
 
 
@@ -286,12 +274,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    
-                
-                    <!-- Fin d'une template-->
+                            <!-- Fin d'une template-->
                         
-                        <!-- Début d'une template-->
+                            <!-- Début d'une template-->
                             <div class="card">
                                 <div class="card-header" id="headingRebondLogo>
                                     <h2 class="mb-0">
@@ -304,12 +289,19 @@
                                 <div id="collapseRebondLogo" class="collapse" aria-labelledby="headingRebondLogo" data-parent="#accordionTemplate">
                                     <div class="card-body">
                                         <form id="formRebondLogo">
+                                            <!-- Deuxième donnée saisie -->
+                                            <label for="duration-picker">Choose duration</label>
+                                            <div class="input-group mb-3">
+                                                <!--<input type="text" class="form-control" id="duration-picker" aria-describedby="basic-addon3"> -->
+                                                <input type="range" class="custom-range" min="1" max="10" id="duration-picker">
+                                            </div>
 
                                         </form>
                                     </div>
                                 </div>
                             </div>
                             <!-- Fin d'une template-->
+                        </div>
                 </div>
                     <div class="col-8">
                         <div class="embed-responsive embed-responsive-16by9">
@@ -352,6 +344,8 @@
                     elem.webkitRequestFullscreen();
                 } else if (elem.msRequestFullscreen) { /* IE/Edge */
                     elem.msRequestFullscreen();
+                } else {
+                    console.log("FullScreen is not available.");
                 }
             }
 
@@ -441,13 +435,11 @@
                 }
             });
 
-            $('form#formRebond input#duration-picker').keypress(function (e) {
-                if (e.which == 13) {
-                    console.log( "duration =",  $(this).val());
-                    console.log( "current duration = ", $("#animateDuration").attr("dur"));
-                    $("#animateDuration").attr("dur",$(this).val());
-                    return false;    // equiv to preventDefault
-                }
+            $('form#formRebond input#duration-picker').mouseup(function (e) {
+                console.log( "duration =",  $(this).val());
+                console.log( "current duration = ", $("#animateDuration").attr("dur"));
+                $("#animateDuration").attr("dur",$(this).val()+"s");
+                return false;    // equiv to preventDefault
             });
 
             $('form#formRebondRandom input#color-picker-square-rebond-random').keypress(function (e) {
@@ -466,13 +458,11 @@
                 }
             });
 
-            $('form#formRebondRandom input#duration-picker').keypress(function (e) {
-                if (e.which == 13) {
-                    console.log( "duration =",  $(this).val());
-                    console.log( "current duration = ", $("#animateDuration").attr("dur"));
-                    $("#animateDuration").attr("dur",$(this).val());
-                    return false;    // equiv to preventDefault
-                }
+            $('form#formRebondRandom input#duration-picker').mouseup(function (e) {
+                console.log( "duration =",  $(this).val());
+                console.log( "current duration = ", $("#animateDuration").attr("dur"));
+                $("#animateDuration").attr("dur",$(this).val()+"s");
+                return false;    // equiv to preventDefault
             });
 
             $('form#formAgrandissementCercle input#color-picker-agrandissement-cercle').keypress(function (e) {
@@ -491,40 +481,47 @@
                 }
             });
 
-            $('form#formAgrandissementCercle input#duration-picker').keypress(function (e) {
-                if (e.which == 13) {
-                    console.log( "duration =",  $(this).val());
-                    console.log( "current duration = ", $("#animateDuration").attr("dur"));
-                    $("#animateDuration").attr("dur",$(this).val());
-                    return false;    // equiv to preventDefault
-                }
+            $('form#formAgrandissementCercle input#duration-picker').mouseup(function (e) {
+                console.log( "duration =",  $(this).val());
+                console.log( "current duration = ", $("#animateDuration").attr("dur"));
+                $("#animateDuration").attr("dur",$(this).val()+"s");
+                return false;    // equiv to preventDefault
             });
 
             // $('form#formApparitionTexte input#text-writer').keypress(function (e) {
             $('form#formApparitionTexte textarea#exampleFormControlTextarea1').keypress(function (e) {
                 if (e.which == 13) {
                     let message = $(this).val();
-                    var draw = SVG();
-                    var text = draw.text(message);
-                    console.log("svg = ", text.svg());
+                    var draw = SVG('#textElement');
+                    // var text = draw.text(message);
+                    console.log("svg = ", draw);
 
-
-                    $('#textElement').contents().filter(
-                        function() {
-                            return (this.nodeType == 3) && (this.textContent.trim().length > 0)
-                        }
-                    ).each(
-                        function(){
-                            console.log("avant = ", this.textContent);
-                            this.textContent = "<tspan> " + message + "</tspan>";
-                            console.log("après = ", this.textContent);
-                        }
-                    );
-                    return true;    // equiv to preventDefault
-                }
+             $('form#formRebondLogo input#duration-picker').mouseup(function (e) {
+                console.log( "duration =",  $(this).val());
+                console.log( "current duration = ", $("#animateDuration").attr("dur"));
+                $("#animateDuration").attr("dur",$(this).val()+"s");
+                return false;    // equiv to preventDefault
             });
 
-        </script>
+
+
+            $('#textElement').contents().filter(
+                function() {
+                    return (this.nodeType == 3) && (this.textContent.trim().length > 0)
+                }
+            ).each(
+                function(){
+                    console.log("avant = ", this.textContent);
+                    // this.textContent = message;
+                    draw.tspan(message);
+                    console.log("après = ", this.textContent);
+                }
+            );
+            return true;    // equiv to preventDefault
+        }
+    });
+
+    </script>
 
 
     </body>

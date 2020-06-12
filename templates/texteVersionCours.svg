@@ -7,9 +7,9 @@
   <rect x="1" y="1" width="1919" height="1079"
         fill="none" stroke="blue" stroke-width="1"/>
 
-    <text id="textElement" x="1200" y="800"
+    <text  x="1200" y="800"
     font-family="Verdana" font-size="100" visibility="visible"  >
-    Nom Prénom
+    <tspan id="textElement"> Nom Prénom </tspan>
     <animate id="first" attributeName="font-size" begin="0s;last.end" dur="5s"
         fill="freeze" from="0" to="50" />
     <animate attributeName="opacity" begin="0s;last.end" dur="5s"
