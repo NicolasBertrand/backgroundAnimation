@@ -289,6 +289,17 @@
                                 <div id="collapseRebondLogo" class="collapse" aria-labelledby="headingRebondLogo" data-parent="#accordionTemplate">
                                     <div class="card-body">
                                         <form id="formRebondLogo">
+
+                                             <!-- Première donnée saisie -->
+                                            <label for="color-picker-background-rebond-logo">Enter background color</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">
+                                                        code
+                                                    </span>
+                                                </div>
+                                                <input type="text" class="form-control" id="color-picker-background-rebond-logo" aria-describedby="basic-addon3">
+                                            </div>
                                             <!-- Deuxième donnée saisie -->
                                             <label for="duration-picker">Choose duration</label>
                                             <div class="input-group mb-3">
@@ -363,6 +374,8 @@
                 $('#color-picker-agrandissement-cercle').colorpicker();
                 console.log( "color =",  $('#color-picker-background-agrandissement-cercle'));
                 $('#color-picker-background-agrandissement-cercle').colorpicker();
+                console.log( "color =",  $('#color-picker-background-rebond-logo'));
+                $('#color-picker-background-rebond-logo').colorpicker();
 
                 // Example using an event, to change the color of the #demo div background:
                 // $('#color-picker-square').on('colorpickerChange', function (event) {
@@ -495,6 +508,14 @@
                     var draw = SVG('#textElement');
                     // var text = draw.text(message);
                     console.log("svg = ", draw);
+
+            $('form#formRebondLogo input#color-picker-background-rebond-logo').keypress(function (e) {
+                if (e.which == 13) {
+                    console.log( "color =",  $(this).val());
+                    $("#background").attr("fill",$(this).val());
+                    return false;    // equiv to preventDefault
+                }
+            });
 
              $('form#formRebondLogo input#duration-picker').mouseup(function (e) {
                 console.log( "duration =",  $(this).val());
