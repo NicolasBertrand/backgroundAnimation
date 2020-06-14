@@ -301,10 +301,10 @@
                                                 <input type="text" class="form-control" id="color-picker-background-rebond-logo" aria-describedby="basic-addon3">
                                             </div>
                                             <!-- Deuxième donnée saisie -->
-                                            <label for="duration-picker">Choose duration</label>
+                                            <label for="duration-picker-rebond-logo">Choose duration</label>
                                             <div class="input-group mb-3">
                                                 <!--<input type="text" class="form-control" id="duration-picker" aria-describedby="basic-addon3"> -->
-                                                <input type="range" class="custom-range" min="1" max="10" id="duration-picker">
+                                                <input type="range" class="custom-range" min="1" max="10" id="duration-picker-rebond-logo">
                                             </div>
 
                                         </form>
@@ -504,10 +504,23 @@
             // $('form#formApparitionTexte input#text-writer').keypress(function (e) {
             $('form#formApparitionTexte textarea#exampleFormControlTextarea1').keypress(function (e) {
                 if (e.which == 13) {
-                    let message = $(this).val();
+                    let messages = $(this).val().split('\n');
+                    console.log("Messages : ", messages);
+                    $("#textElement tspan").remove();
+                    console.log("SVG : ", $("#textElement tspan"));
                     var draw = SVG('#textElement');
+                    var message;
+                    draw.build(true);
+                    for (message of messages) {
+                        draw.tspan(message).newLine();
+                    }
+                    draw.build(false);
+                    draw.beginElement();
                     // var text = draw.text(message);
                     console.log("svg = ", draw);
+                    return true;    // equiv to preventDefault
+                }
+            });
 
             $('form#formRebondLogo input#color-picker-background-rebond-logo').keypress(function (e) {
                 if (e.which == 13) {
@@ -517,7 +530,7 @@
                 }
             });
 
-             $('form#formRebondLogo input#duration-picker').mouseup(function (e) {
+            $('form#formRebondLogo input#duration-picker-rebond-logo').mouseup(function (e) {
                 console.log( "duration =",  $(this).val());
                 console.log( "current duration = ", $("#animateDuration").attr("dur"));
                 $("#animateDuration").attr("dur",$(this).val()+"s");
@@ -538,9 +551,6 @@
                     console.log("après = ", this.textContent);
                 }
             );
-            return true;    // equiv to preventDefault
-        }
-    });
 
     </script>
 
