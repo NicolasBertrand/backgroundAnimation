@@ -61,8 +61,10 @@
 
                     <!-- Début d'une colonne -->
                     <div class="col">
-
-                        <!-- Début d'une pile de carte -->
+<div class="demo">
+      <h1>Bootstrap Colorpicker Demo (with Bootstrap)</h1>
+      <input id="demo-input" type="text" value="rgb(255, 128, 0)" />
+  </div>
                         <div class="accordion" id="accordionTemplate">
 
                             <!-- Début d'une carte dans la pile -->
@@ -80,7 +82,7 @@
                                 <!-- Contenu de la carte -->
                                 <div id="collapseRebond" class="collapse show" aria-labelledby="headingRebond" data-parent="#accordionTemplate">
                                     <div class="card-body">
-                                        
+
                                         <!-- Début du formulaire de saisie des données spécifiques à cette carte -->
                                         <form id="formRebond">
 
@@ -240,7 +242,7 @@
 
                                             <label for="text-writer">Enter text</label>
                                             <div class="input-group mb-3">
-                                                
+
 
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">
@@ -274,7 +276,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Fin d'une template-->
+
+                          <!-- Fin d'une template-->
                         
                             <!-- Début d'une template-->
                             <div class="card">
@@ -312,8 +315,30 @@
                                 </div>
                             </div>
                             <!-- Fin d'une template-->
+                                                                                                                                          
+                        <!-- Début d'une template-->
+                        <div class="card">
+                            <div class="card-header" id="headingBasics">
+                                <h2 class="mb-0">
+                                    <button id="btnBasics" class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseBasics" aria-expanded="false" aria-controls="collapseBasics">
+                                        Template de base
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseBasics" class="collapse" aria-labelledby="headingBasics" data-parent="#accordionTemplate">
+                                <div class="card-body">
+                                     <button id="btnBasicsOne" class="btn basics-template" type="button" >
+                                        Basic One
+                                    </button>
+
+                                </div>
+                            </div>
+
                         </div>
-                </div>
+
+
+                        <!-- Fin d'une template-->                                                                             
+
                     <div class="col-8">
                         <div class="embed-responsive embed-responsive-16by9">
                             <div id="svgIframe" class="embed-responsive-item"></div>
@@ -396,6 +421,8 @@
                 xhr.send();
             }
 
+
+
             function click() {
                 console.log("Changed: " + this.id);
                 var svgPath="";
@@ -411,7 +438,7 @@
                     case 'btnRebondLogo':
                         svgPath ="../templates/logoRebond.svg";
                         break;
-                    
+
                     case 'btnAvecImage':
                         svgPath ="../templates/avecLogoPng.svg";
                         break;
@@ -423,6 +450,9 @@
                     case 'btnApparitionTexte':
                         svgPath ="../templates/texteVersionCours.svg";
                         break;
+                    case 'btnBasics':
+                        break;
+
                 }
 
                 console.log("svgPath: " + svgPath);
@@ -432,7 +462,22 @@
             $(".btn-template").click(click);
             click.apply({id: "btnRebond"});
 
-            $('form#formRebond input#color-picker-square-rebond').keypress(function (e) {
+$(".basics-template").on('click', function(event) {
+    console.log("Changed Basics: " + this.id);
+    var svgPath="";
+    switch(this.id) {
+        case 'btnBasicsOne':
+            svgPath ="../templates/basics/translationHautBasRectangleAnimate.svg";
+            break;
+
+    }
+    console.log("svgPath: " + svgPath);
+    loadIframe("svgIframe", svgPath);
+
+            });
+
+            $('form#formRebond input#color-picker-square').keypress(function (e) {
+
                 if (e.which == 13) {
                     console.log( "color =",  $(this).val());
                     $("#animatedRect").attr("fill",$(this).val());
