@@ -13,30 +13,31 @@
         <!-- Bootstrap core CSS -->
         <link href="assets/dist/css/bootstrap.css" rel="stylesheet">
         <!-- Adding colorpicker CSS -->
-        <link href="dist/css/bootstrap-colorpicker.css" rel="stylesheet">
-
         <link href="assets/dist/css/bootstrap-colorpicker.css" rel="stylesheet">
 
         <style>
-                .bd-placeholder-img {
-                    font-size: 1.125rem;
-                    text-anchor: middle;
-                    -webkit-user-select: none;
-                    -moz-user-select: none;
-                    -ms-user-select: none;
-                    user-select: none;
-                }
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
-                @media (min-width: 768px) {
-                    .bd-placeholder-img-lg {
-                        font-size: 3.5rem;
+                    @media (min-width: 768px) {
+                        .bd-placeholder-img-lg {
+                            font-size: 3.5rem;
+                        }
                     }
-                }
         </style>
         <!-- Custom styles for this template -->
         <link href="starter-template.css" rel="stylesheet">
-    </head>
+    </head>*
+
     <body>
+
+
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
             <a class="navbar-brand" href="#">backgroundAnimation</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,10 +52,9 @@
         <p>Click on the button to open the video in fullscreen mode.</p>
         <button onclick="openFullscreen();">Open Video in Fullscreen Mode</button>
         <p><strong>Tip:</strong> Press the "Esc" key to exit full screen.</p>
-
         <main role="main" class="container-fluid">
+            <div class="backgroundAnimation">
 
-            <div class="container-fluid">
 
                 <!-- Début d'une série de colonnes -->
                 <div class="row">
@@ -94,7 +94,7 @@
                                                 <input type="text" class="form-control" id="color-picker-square-rebond" aria-describedby="basic-addon3">
                                             </div>
 
-                                             <!-- Première donnée saisie -->
+                                            <!-- Première donnée saisie -->
                                             <label for="color-picker-background-rebond">Enter background color</label>
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
@@ -289,7 +289,7 @@
                                     <div class="card-body">
                                         <form id="formRebondLogo">
 
-                                             <!-- Première donnée saisie -->
+                                            <!-- Première donnée saisie -->
                                             <label for="color-picker-background-rebond-logo">Enter background color</label>
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
@@ -309,6 +309,7 @@
                                         </form>
                                     </div>
                                 </div>
+
                             </div>
                             <!-- Fin d'une template-->
              
@@ -327,13 +328,17 @@
                                         Basic One
                                     </button>
 
+                                    </div>
                                 </div>
+
                             </div>
+
+
+                            <!-- Fin d'une template-->
 
                         </div>
 
-
-                        <!-- Fin d'une template-->                                                                             
+                    </div>
 
                     <div class="col-8">
                         <div class="embed-responsive embed-responsive-16by9">
@@ -346,120 +351,121 @@
         </div>
             </div>
 
+                </div>
         </main><!-- /.container -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
         </script>
         <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
         <script src="assets/dist/js/bootstrap.bundle.js"></script>
-        
+
         <script src="assets/dist/js/bootstrap-colorpicker.js"></script>
         <script src="assets/dist/js/svg.js"></script>
         <script>
             $(function () {
-            // Basic instantiation:
-            $('#demo-input').colorpicker();
+                // Basic instantiation:
+                $('#demo-input').colorpicker();
 
-            // Example using an event, to change the color of the #demo div background:
-            $('#demo-input').on('colorpickerChange', function(event) {
-                $('#demo').css('background-color', event.color.toString());
-            });
+                // Example using an event, to change the color of the #demo div background:
+                $('#demo-input').on('colorpickerChange', function(event) {
+                    $('#demo').css('background-color', event.color.toString());
+                });
             });
         </script>
 
         <script>
 
             var elem = document.getElementById("svgIframe");
-            function openFullscreen() {
-                $("svg").attr('width','100%');
-                if (elem.requestFullscreen) {
-                    elem.requestFullscreen();
-                } else if (elem.mozRequestFullScreen) { /* Firefox */
-                    elem.mozRequestFullScreen();
-                } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-                    elem.webkitRequestFullscreen();
-                } else if (elem.msRequestFullscreen) { /* IE/Edge */
-                    elem.msRequestFullscreen();
-                } else {
-                    console.log("FullScreen is not available.");
-                }
-            }
+function openFullscreen() {
+    $("svg").attr('width','100%');
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { /* Firefox */
+        elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE/Edge */
+        elem.msRequestFullscreen();
+    } else {
+        console.log("FullScreen is not available.");
+    }
+}
 
-            $(function () {
-                // Basic instantiation:
-                console.log( "color =",  $('#color-picker-square-rebond'));
-                $('#color-picker-square-rebond').colorpicker();
-                console.log( "color =",  $('#color-picker-background-rebond'));
-                $('#color-picker-background-rebond').colorpicker();
-                console.log( "color =",  $('#color-picker-square-rebond-random'));
-                $('#color-picker-square-rebond-random').colorpicker();
-                console.log( "color =",  $('#color-picker-background-rebond-random'));
-                $('#color-picker-background-rebond-random').colorpicker();
-                console.log( "color =",  $('#color-picker-agrandissement-cercle'));
-                $('#color-picker-agrandissement-cercle').colorpicker();
-                console.log( "color =",  $('#color-picker-background-agrandissement-cercle'));
-                $('#color-picker-background-agrandissement-cercle').colorpicker();
-                console.log( "color =",  $('#color-picker-background-rebond-logo'));
-                $('#color-picker-background-rebond-logo').colorpicker();
+$(function () {
+    // Basic instantiation:
+    console.log( "color =",  $('#color-picker-square-rebond'));
+    $('#color-picker-square-rebond').colorpicker();
+    console.log( "color =",  $('#color-picker-background-rebond'));
+    $('#color-picker-background-rebond').colorpicker();
+    console.log( "color =",  $('#color-picker-square-rebond-random'));
+    $('#color-picker-square-rebond-random').colorpicker();
+    console.log( "color =",  $('#color-picker-background-rebond-random'));
+    $('#color-picker-background-rebond-random').colorpicker();
+    console.log( "color =",  $('#color-picker-agrandissement-cercle'));
+    $('#color-picker-agrandissement-cercle').colorpicker();
+    console.log( "color =",  $('#color-picker-background-agrandissement-cercle'));
+    $('#color-picker-background-agrandissement-cercle').colorpicker();
+    console.log( "color =",  $('#color-picker-background-rebond-logo'));
+    $('#color-picker-background-rebond-logo').colorpicker();
 
-                // Example using an event, to change the color of the #demo div background:
-                // $('#color-picker-square').on('colorpickerChange', function (event) {
-                //     $('#demo').css('background-color', event.color.toString());
-                // });
-            });
-
-
-
-            function loadIframe(iframeName, url) {
-                var xhr = new XMLHttpRequest();
-                xhr.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById(iframeName).innerHTML = xhr.responseText;
-                    }
-                };
-                xhr.open("GET", url, true);
-                xhr.send();
-            }
+    // Example using an event, to change the color of the #demo div background:
+    // $('#color-picker-square').on('colorpickerChange', function (event) {
+    //     $('#demo').css('background-color', event.color.toString());
+    // });
+});
 
 
 
-            function click() {
-                console.log("Changed: " + this.id);
-                var svgPath="";
-                switch(this.id) {
-                    case 'btnRebond':
-                        svgPath ="../templates/rebond.svg";
-                        break;
+function loadIframe(iframeName, url) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById(iframeName).innerHTML = xhr.responseText;
+        }
+    };
+    xhr.open("GET", url, true);
+    xhr.send();
+}
 
-                    case 'btnRebondRandom':
-                        svgPath ="../templates/rebondRandom.svg";
-                        break;
 
-                    case 'btnRebondLogo':
-                        svgPath ="../templates/logoRebond.svg";
-                        break;
 
-                    case 'btnAvecImage':
-                        svgPath ="../templates/avecLogoPng.svg";
-                        break;
+function click() {
+    console.log("Changed: " + this.id);
+    var svgPath="";
+    switch(this.id) {
+        case 'btnRebond':
+            svgPath ="../templates/rebond.svg";
+            break;
 
-                    case 'btnAgrandissementCercle':
-                        svgPath ="../templates/agrandissementCercle.svg";
-                        break;
+        case 'btnRebondRandom':
+            svgPath ="../templates/rebondRandom.svg";
+            break;
 
-                    case 'btnApparitionTexte':
-                        svgPath ="../templates/texteVersionCours.svg";
-                        break;
-                    case 'btnBasics':
-                        break;
+        case 'btnRebondLogo':
+            svgPath ="../templates/logoRebond.svg";
+            break;
 
-                }
+        case 'btnAvecImage':
+            svgPath ="../templates/avecLogoPng.svg";
+            break;
 
-                console.log("svgPath: " + svgPath);
-                loadIframe("svgIframe", svgPath);
-            }
+        case 'btnAgrandissementCercle':
+            svgPath ="../templates/agrandissementCercle.svg";
+            break;
 
-            $(".btn-template").click(click);
-            click.apply({id: "btnRebond"});
+        case 'btnApparitionTexte':
+            svgPath ="../templates/texteVersionCours.svg";
+            break;
+        case 'btnBasics':
+            break;
+
+    }
+
+    console.log("svgPath: " + svgPath);
+    loadIframe("svgIframe", svgPath);
+}
+
+$(".btn-template").click(click);
+click.apply({id: "btnRebond"});
 
 $(".basics-template").on('click', function(event) {
     console.log("Changed Basics: " + this.id);
@@ -472,6 +478,7 @@ $(".basics-template").on('click', function(event) {
     }
     console.log("svgPath: " + svgPath);
     loadIframe("svgIframe", svgPath);
+});
 
             });
 
@@ -514,88 +521,126 @@ $(".basics-template").on('click', function(event) {
                 }
             });
 
-            $('form#formRebondRandom input#duration-picker').mouseup(function (e) {
-                console.log( "duration =",  $(this).val());
-                console.log( "current duration = ", $("#animateDuration").attr("dur"));
-                $("#animateDuration").attr("dur",$(this).val()+"s");
-                return false;    // equiv to preventDefault
-            });
+    if (e.which == 13) {
+        console.log( "color =",  $(this).val());
+        $("#animatedRect").attr("fill",$(this).val());
+        return false;    // equiv to preventDefault
+    }
+});
 
-            $('form#formAgrandissementCercle input#color-picker-agrandissement-cercle').keypress(function (e) {
-                if (e.which == 13) {
-                    console.log( "color =",  $(this).val());
-                    $("#animatedCircle").attr("fill",$(this).val());
-                    return false;    // equiv to preventDefault
-                }
-            });
+$('form#formRebond input#color-picker-background-rebond').keypress(function (e) {
+    if (e.which == 13) {
+        console.log( "color =",  $(this).val());
+        $("#background").attr("fill",$(this).val());
+        return false;    // equiv to preventDefault
+    }
+});
 
-            $('form#formAgrandissementCercle input#color-picker-background-agrandissement-cercle').keypress(function (e) {
-                if (e.which == 13) {
-                    console.log( "color =",  $(this).val());
-                    $("#background").attr("fill",$(this).val());
-                    return false;    // equiv to preventDefault
-                }
-            });
+$('form#formRebond input#duration-picker').mouseup(function (e) {
+    console.log( "duration =",  $(this).val());
+    console.log( "current duration = ", $("#animateDuration").attr("dur"));
+    $("#animateDuration").attr("dur",$(this).val()+"s");
+    return false;    // equiv to preventDefault
+});
 
-            $('form#formAgrandissementCercle input#duration-picker').mouseup(function (e) {
-                console.log( "duration =",  $(this).val());
-                console.log( "current duration = ", $("#animateDuration").attr("dur"));
-                $("#animateDuration").attr("dur",$(this).val()+"s");
-                return false;    // equiv to preventDefault
-            });
+$('form#formRebondRandom input#color-picker-square-rebond-random').keypress(function (e) {
+    if (e.which == 13) {
+        console.log( "color =",  $(this).val());
+        $("#animatedRect").attr("fill",$(this).val());
+        return false;    // equiv to preventDefault
+    }
+});
 
-            // $('form#formApparitionTexte input#text-writer').keypress(function (e) {
-            $('form#formApparitionTexte textarea#exampleFormControlTextarea1').keypress(function (e) {
-                if (e.which == 13) {
-                    let messages = $(this).val().split('\n');
-                    console.log("Messages : ", messages);
-                    $("#textElement tspan").remove();
-                    console.log("SVG : ", $("#textElement tspan"));
-                    var draw = SVG('#textElement');
-                    var message;
-                    draw.build(true);
-                    for (message of messages) {
-                        draw.tspan(message).newLine();
-                    }
-                    draw.build(false);
-                    draw.beginElement();
-                    // var text = draw.text(message);
-                    console.log("svg = ", draw);
-                    return true;    // equiv to preventDefault
-                }
-            });
+$('form#formRebondRandom input#color-picker-background-rebond-random').keypress(function (e) {
+    if (e.which == 13) {
+        console.log( "color =",  $(this).val());
+        $("#background").attr("fill",$(this).val());
+        return false;    // equiv to preventDefault
+    }
+});
 
-            $('form#formRebondLogo input#color-picker-background-rebond-logo').keypress(function (e) {
-                if (e.which == 13) {
-                    console.log( "color =",  $(this).val());
-                    $("#background").attr("fill",$(this).val());
-                    return false;    // equiv to preventDefault
-                }
-            });
+$('form#formRebondRandom input#duration-picker').mouseup(function (e) {
+    console.log( "duration =",  $(this).val());
+    console.log( "current duration = ", $("#animateDuration").attr("dur"));
+    $("#animateDuration").attr("dur",$(this).val()+"s");
+    return false;    // equiv to preventDefault
+});
 
-            $('form#formRebondLogo input#duration-picker-rebond-logo').mouseup(function (e) {
-                console.log( "duration =",  $(this).val());
-                console.log( "current duration = ", $("#animateDuration").attr("dur"));
-                $("#animateDuration").attr("dur",$(this).val()+"s");
-                return false;    // equiv to preventDefault
-            });
+$('form#formAgrandissementCercle input#color-picker-agrandissement-cercle').keypress(function (e) {
+    if (e.which == 13) {
+        console.log( "color =",  $(this).val());
+        $("#animatedCircle").attr("fill",$(this).val());
+        return false;    // equiv to preventDefault
+    }
+});
+
+$('form#formAgrandissementCercle input#color-picker-background-agrandissement-cercle').keypress(function (e) {
+    if (e.which == 13) {
+        console.log( "color =",  $(this).val());
+        $("#background").attr("fill",$(this).val());
+        return false;    // equiv to preventDefault
+    }
+});
+
+$('form#formAgrandissementCercle input#duration-picker').mouseup(function (e) {
+    console.log( "duration =",  $(this).val());
+    console.log( "current duration = ", $("#animateDuration").attr("dur"));
+    $("#animateDuration").attr("dur",$(this).val()+"s");
+    return false;    // equiv to preventDefault
+});
+
+// $('form#formApparitionTexte input#text-writer').keypress(function (e) {
+$('form#formApparitionTexte textarea#exampleFormControlTextarea1').keypress(function (e) {
+    if (e.which == 13) {
+        let messages = $(this).val().split('\n');
+        console.log("Messages : ", messages);
+        $("#textElement tspan").remove();
+        console.log("SVG : ", $("#textElement tspan"));
+        var draw = SVG('#textElement');
+        var message;
+        draw.build(true);
+        for (message of messages) {
+            draw.tspan(message).newLine();
+        }
+        draw.build(false);
+        draw.beginElement();
+        // var text = draw.text(message);
+        console.log("svg = ", draw);
+        return true;    // equiv to preventDefault
+    }
+});
+
+$('form#formRebondLogo input#color-picker-background-rebond-logo').keypress(function (e) {
+    if (e.which == 13) {
+        console.log( "color =",  $(this).val());
+        $("#background").attr("fill",$(this).val());
+        return false;    // equiv to preventDefault
+    }
+});
+
+$('form#formRebondLogo input#duration-picker-rebond-logo').mouseup(function (e) {
+    console.log( "duration =",  $(this).val());
+    console.log( "current duration = ", $("#animateDuration").attr("dur"));
+    $("#animateDuration").attr("dur",$(this).val()+"s");
+    return false;    // equiv to preventDefault
+});
 
 
 
-            $('#textElement').contents().filter(
-                function() {
-                    return (this.nodeType == 3) && (this.textContent.trim().length > 0)
-                }
-            ).each(
-                function(){
-                    console.log("avant = ", this.textContent);
-                    // this.textContent = message;
-                    draw.tspan(message);
-                    console.log("après = ", this.textContent);
-                }
-            );
+$('#textElement').contents().filter(
+    function() {
+        return (this.nodeType == 3) && (this.textContent.trim().length > 0)
+    }
+).each(
+    function(){
+        console.log("avant = ", this.textContent);
+        // this.textContent = message;
+        draw.tspan(message);
+        console.log("après = ", this.textContent);
+    }
+);
 
-    </script>
+        </script>
 
 
     </body>
