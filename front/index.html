@@ -403,7 +403,6 @@
             var elem = document.getElementById("svgIframe");
 
             function openFullscreen() {
-                $("svg").attr('width','100%');
                 if (elem.requestFullscreen) {
                     elem.requestFullscreen();
                 } else if (elem.mozRequestFullScreen) { /* Firefox */
@@ -416,6 +415,21 @@
                     console.log("FullScreen is not available.");
                 }
             }
+
+            document.addEventListener('fullscreenchange', (event) => {
+                // document.fullscreenElement will point to the element that
+                // is in fullscreen mode if there is one. If there isn't one,
+                // the value of the property is null.
+                var localWidth;
+                if (document.fullscreenElement) {
+                    console.log(`Element: ${document.fullscreenElement.id} entered full-screen mode.`);
+                    localWidth = $("svg").attr('width');
+                    $("svg").attr('width','100%');
+                } else {
+                    console.log('Leaving full-screen mode.');
+                    $("svg").attr('width',localWidth);
+                }
+            });
 
             $(function () {
                 // Basic instantiation:
@@ -494,7 +508,8 @@
             $(".btn-template").click(click);
             click.apply({id: "btnRebond"});
 
-            $(".basics-template").on('click', function(event) {
+            // $(".basics-template").on('click', function(event) {
+            function clickBasics() {
                 console.log("Changed Basics: " + this.id);
                 var svgPath="";
                 switch(this.id) {
@@ -510,13 +525,14 @@
                     case 'btnBasicsFour':
                         svgPath ="../templates/basics/changementCouleurRectangleAnimate.svg";
                         break;
-
-
-
                 }
                 console.log("svgPath: " + svgPath);
                 loadIframe("svgIframe", svgPath);
-            });
+            // });
+            }
+
+            $(".basics-template").click(clickBasics);
+            clickBasics.apply({id: "btnBasicsOne"});
 
             $('form#formRebond input#color-picker-square').keypress(function (e) {
                 if (e.which == 13) {
