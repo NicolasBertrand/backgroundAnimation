@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<svg width="800px" viewBox="0 0 1920 1080"
+<svg width="100%" viewBox="0 0 1920 1080"
      xmlns="http://www.w3.org/2000/svg" version="1.1">
       <desc>Example rect01 - rectangle with sharp corners</desc>
 
@@ -10,7 +10,7 @@
 
       <path id="path1" d="M 0,440 L 380,878 860,0 1340,878 1718,440 1340,0 860,878 380,0 0,440 "
         fill="none" stroke="blue" stroke-width="0"  />
-      <image href="https://upload.wikimedia.org/wikipedia/fr/thumb/c/cc/Institut_national_polytechnique_de_Toulouse_%28logo%29.svg/1200px-Institut_national_polytechnique_de_Toulouse_%28logo%29.svg.png" height="200" width="200">
+      <image id='referencePic' href=""  width="200">
             <animateMotion id='animateDuration' dur="10s" repeatCount="indefinite">
                   <mpath href="#path1"/>
             </animateMotion>

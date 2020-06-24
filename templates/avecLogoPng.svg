@@ -1,6 +1,6 @@
-<svg width="800px"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <rect id="background" x="0" y="0" width="1920" height="1080" fill="white"/>
-  <rect x="0" y="0" width="1919" height="1079" fill="none" stroke="blue" stroke-width="1"/>
-  <image id='referencePic' src="" height="200" width="200"/>
+<svg width="100%"
+xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080" >
+    <rect id="background" x="0" y="0" width="1920" height="1080" fill="white"/>
+    <rect x="0" y="0" width="1919" height="1079" fill="none" stroke="blue" stroke-width="1"/>
+    <image id='referencePic' href=""  width="200"/>
 </svg>

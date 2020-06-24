@@ -48,14 +48,12 @@
             </div>
         </nav>
 
-        <h2>Fullscreen with JavaScript</h2>
-        <p>Click on the button to open the video in fullscreen mode.</p>
-        <button onclick="openFullscreen();">Open Video in Fullscreen Mode</button>
-        <p><strong>Tip:</strong> Press the "Esc" key to exit full screen.</p>
+        <p align="right">Cliquer sur le bouton pour ouvrir la vidéo en plein écran.</p>
+        <p align="right"><strong>Conseil:</strong> Appuyez sur la touche "Esc" pour quitter le mode plein écran.</p>
+        <button style="float: right;" onclick="openFullscreen();">Ouvrir en Plein Ecran</button>
+
         <main role="main" class="container-fluid">
             <div class="backgroundAnimation">
-
-
                 <!-- Début d'une série de colonnes -->
                 <div class="row">
 
@@ -74,8 +72,10 @@
                                             Rebond Carré
                                         </button>
                                     </h2>
-                                </div>
+                                </div> <!-- end of card-header -->
+
                                 <label for="text-writer">Un carré rebondit de manière régulière sur les bords de l'écran. Vous pouvez changer la couleur du carré et du fond et la vitesse de déplacement de l'objet.</label>
+
                                 <!-- Contenu de la carte -->
                                 <div id="collapseRebond" class="collapse show" aria-labelledby="headingRebond" data-parent="#accordionTemplate">
                                     <div class="card-body">
@@ -90,9 +90,9 @@
                                                     <span class="input-group-text" id="basic-addon3">
                                                         code
                                                     </span>
-                                                </div>
+                                                </div> <!-- end of input-group-prepend -->
                                                 <input type="text" class="form-control" id="color-picker-square-rebond" aria-describedby="basic-addon3">
-                                            </div>
+                                            </div> <!-- end of input-group -->
 
                                             <!-- Première donnée saisie -->
                                             <label for="color-picker-background-rebond">Enter background color</label>
@@ -101,23 +101,24 @@
                                                     <span class="input-group-text" id="basic-addon3">
                                                         code
                                                     </span>
-                                                </div>
+                                                </div> <!-- end of iput-group-prepend -->
                                                 <input type="text" class="form-control" id="color-picker-background-rebond" aria-describedby="basic-addon3">
-                                            </div>
+                                            </div> <!-- end of input-group -->
 
                                             <!-- Deuxième donnée saisie -->
                                             <label for="duration-picker">Choose duration</label>
                                             <div class="input-group mb-3">
                                                 <!--<input type="text" class="form-control" id="duration-picker" aria-describedby="basic-addon3"> -->
                                                 <input type="range" class="custom-range" min="1" max="10" id="duration-picker">
-                                            </div>
+                                            </div> <!-- end of input-group -->
 
                                         </form>
-                                    </div>
-                                </div>
-                            </div>
+                                    </div> <!-- end of card-body -->
+                                </div> <!-- end of collapse -->
+                            </div> <!-- end of card -->
+                            <!-- Fin d'une carte de la pile -->
 
-                            <!-- Début d'une template-->
+                            <!-- Début d'une carte dans la pile -->
                             <div class="card">
                                 <div class="card-header" id="headingRebondRandom">
                                     <h2 class="mb-0">
@@ -125,12 +126,13 @@
                                             Rebond Carré Aléatoire
                                         </button>
                                     </h2>
-                                </div>
+                                </div> <!-- end of card-header -->
+
                                 <label for="text-writer">Un carré rebondit de manière aléatoire sur les bords de l'écran. Vous pouvez changer la couleur du carré et du fond et la vitesse de déplacement de l'objet.</label>
+                                
                                 <div id="collapseRebondRandom" class="collapse" aria-labelledby="headingRebondRandom" data-parent="#accordionTemplate">
                                     <div class="card-body">
                                         <form id="formRebondRandom">
-
 
                                             <!-- Première donnée saisie -->
                                             <label for="color-picker-square-rebond-random">Enter color</label>
@@ -140,9 +142,9 @@
                                                         code
                                                     </span>
 
-                                                </div>
+                                                </div> <!-- end of imput-group-prepend -->
                                                 <input type="text" class="form-control" id="color-picker-square-rebond-random" aria-describedby="basic-addon3">
-                                            </div>
+                                            </div> <!-- end of imput-group -->
 
                                             <!-- Première donnée saisie -->
                                             <label for="color-picker-background-rebond-random">Enter background color</label>
@@ -151,25 +153,25 @@
                                                     <span class="input-group-text" id="basic-addon3">
                                                         code
                                                     </span>
-                                                </div>
+                                                </div> <!-- end of imput-group-prepend -->
                                                 <input type="text" class="form-control" id="color-picker-background-rebond-random" aria-describedby="basic-addon3">
-                                            </div>
+                                            </div> <!-- end of imput-group -->
 
                                             <!-- Deuxième donnée saisie -->
                                             <label for="duration-picker">Choose duration</label>
                                             <div class="input-group mb-3">
                                                 <!--<input type="text" class="form-control" id="duration-picker" aria-describedby="basic-addon3"> -->
                                                 <input type="range" class="custom-range" min="1" max="10" id="duration-picker">
-                                            </div>
+                                            </div> <!-- end of imput-group -->
 
 
                                         </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Fin d'une template-->
+                                    </div> <!-- end of card body -->
+                                </div> <!-- end of collapse -->
+                            </div> <!-- end of card -->
+                            <!-- Fin d'une carte de la pile -->
 
-                            <!-- Début d'une template-->
+                            <!-- Début d'une carte dans la pile -->
                             <div class="card">
                                 <div class="card-header" id="headingAgrandissementCercle">
                                     <h2 class="mb-0">
@@ -177,13 +179,13 @@
                                             Agrandissement Cercle
                                         </button>
                                     </h2>
-                                </div>
+                                </div> <!-- end of card-header -->
+
                                 <label for="text-writer">Un cercle dont le rayon augmente est affiché. Vous pouvez changer la couleur du carré et du fond et la vitesse de déplacement de l'objet.</label>
+                                
                                 <div id="collapseAgrandissementCercle" class="collapse" aria-labelledby="headingAgrandissementCercle" data-parent="#accordionTemplate">
                                     <div class="card-body">
                                         <form id="formAgrandissementCercle">
-
-
 
                                             <label for="color-picker-agrandissement-cercle">Enter color</label>
                                             <div class="input-group mb-3">
@@ -192,9 +194,9 @@
                                                         code
                                                     </span>
 
-                                                </div>
+                                                </div> <!-- end of imput-group-prepend -->
                                                 <input type="text" class="form-control" id="color-picker-agrandissement-cercle" aria-describedby="basic-addon3">
-                                            </div>
+                                            </div> <!-- end of imput-group -->
 
                                             <!-- Première donnée saisie -->
                                             <label for="color-picker-background-agrandissement-cercle">Enter background color</label>
@@ -203,25 +205,25 @@
                                                     <span class="input-group-text" id="basic-addon3">
                                                         code
                                                     </span>
-                                                </div>
+                                                </div> <!-- end of imput-group-text -->
                                                 <input type="text" class="form-control" id="color-picker-background-agrandissement-cercle" aria-describedby="basic-addon3">
-                                            </div>
+                                            </div> <!-- end of imput-group -->
 
                                             <!-- Deuxième donnée saisie -->
                                             <label for="duration-picker">Choose duration</label>
                                             <div class="input-group mb-3">
                                                 <!--<input type="text" class="form-control" id="duration-picker" aria-describedby="basic-addon3"> -->
                                                 <input type="range" class="custom-range" min="1" max="10" id="duration-picker">
-                                            </div>
+                                            </div> <!-- end of imput-group -->
 
 
                                         </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Fin d'une template-->
+                                    </div> <!-- end of card-body -->
+                                </div> <!-- end of collapse -->
+                            </div> <!-- end of card -->
+                            <!-- Fin d'une carte de la pile -->
 
-                            <!-- Début d'une template-->
+                            <!-- Début d'une carte dans la pile -->
                             <div class="card">
                                 <div class="card-header" id="headingApparitionTexte">
                                     <h2 class="mb-0">
@@ -229,7 +231,7 @@
                                             Apparition Texte
                                         </button>
                                     </h2>
-                                </div>
+                                </div> <!-- end of card-header -->
                                 <label for="text-writer">Un texte apparaît, reste à l'écran puis disparait. Vous pouvez remplacer le texte proposé par un texte sur plusieurs lignes.</label>
                                 <div id="collapseApparitionTexte" class="collapse" aria-labelledby="headingApparitionTexte" data-parent="#accordionTemplate">
                                     <div class="card-body">
@@ -249,15 +251,14 @@
                                                 </div>
                                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                                 <!-- <input type="text" class="form-control" id="text-writer" aria-describedby="basic-addon3"> -->
-                                            </div>
+                                            </div> <!-- end of imput-group -->
                                         </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Fin d'une template-->
+                                    </div> <!-- end of card body -->
+                                </div> <!-- end of collapse -->
+                            </div> <!-- end of card -->
+                            <!-- Fin d'une carte de la pile -->
 
-
-                            <!-- Début d'une template-->
+                            <!-- Début d'une carte dans la pile -->
                             <div class="card">
                                 <div class="card-header" id="headingAvecImage">
                                     <h2 class="mb-0">
@@ -265,33 +266,33 @@
                                             Avec Logo Image
                                         </button>
                                     </h2>
-                                </div>
+                                </div> <!-- end of card-header -->
                                 <label for="text-writer">Un logo est intégré au fond.</label>
                                 <div id="collapseAvecImage" class="collapse" aria-labelledby="headingAvecImage" data-parent="#accordionTemplate">
                                     <div class="card-body">
-
-                                    </div>
-                                    <div class="container">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Upload Image</label>
-                                                <div class="input-group">
-                                                    <span class="input-group-btn">
-                                                        <span class="btn btn-default btn-file">
-                                                            Browse… <input type="file" id="imgInp">
+                                        <div class="container">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Upload Image</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-btn">
+                                                            <span class="btn btn-default btn-file">
+                                                                Browse… <input type="file" id="imgInp-fond">
+                                                            </span>
                                                         </span>
-                                                    </span>
-                                                    <input type="text" class="form-control" readonly>
-                                                </div>
-                                                <img id='img-upload'/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Fin d'une template-->
+                                                        <input type="text" class="form-control" readonly>
+                                                    </div> <!-- end of input-group -->
+                                                    <img id='img-upload'/>
+                                                </div> <!-- end of form-group -->
+                                            </div><!-- end of col-md-6 -->
+                                        </div> <!-- end of container -->
+                                    </div> <!-- end of card body -->
+
+                                </div> <!-- end of collapse -->
+                            </div> <!-- end of card -->
+                            <!-- Fin d'une carte de la pile -->
                         
-                            <!-- Début d'une template-->
+                            <!-- Début d'une carte dans la pile -->
                             <div class="card">
                                 <div class="card-header" id="headingRebondLogo">
                                     <h2 class="mb-0">
@@ -299,12 +300,24 @@
                                             Rebond Logo
                                         </button>
                                     </h2>
-                                </div>
+                                </div> <!-- end of card-header -->
                                 <label for="text-writer">Un logo rebondit de manière régulière sur les bords de l'écran. Vous pouvez changer la couleur du carré et du fond et la vitesse de déplacement de l'objet.</label>
                                 <div id="collapseRebondLogo" class="collapse" aria-labelledby="headingRebondLogo" data-parent="#accordionTemplate">
                                     <div class="card-body">
-                                        <form id="formRebondLogo">
+                                        <div class="form-group">
+                                            <label>Upload Image</label>
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <span class="btn btn-default btn-file">
+                                                        Browse… <input type="file" id="imgInp-mobile">
+                                                    </span>
+                                                </span>
+                                                <input type="text" class="form-control" readonly>
+                                            </div> <!-- end of input-group -->
+                                            <img id='img-upload'/>
+                                        </div> <!-- end of form-group -->
 
+                                        <form id="formRebondLogo">
                                             <!-- Première donnée saisie -->
                                             <label for="color-picker-background-rebond-logo">Enter background color</label>
                                             <div class="input-group mb-3">
@@ -312,80 +325,84 @@
                                                     <span class="input-group-text" id="basic-addon3">
                                                         code
                                                     </span>
-                                                </div>
+                                                </div> <!-- end of imput-group-prepend -->
                                                 <input type="text" class="form-control" id="color-picker-background-rebond-logo" aria-describedby="basic-addon3">
-                                            </div>
+                                            </div> <!-- end of iput-group -->
+
                                             <!-- Deuxième donnée saisie -->
                                             <label for="duration-picker-rebond-logo">Choose duration</label>
                                             <div class="input-group mb-3">
                                                 <!--<input type="text" class="form-control" id="duration-picker" aria-describedby="basic-addon3"> -->
                                                 <input type="range" class="custom-range" min="1" max="10" id="duration-picker-rebond-logo">
-                                            </div>
+                                            </div> <!-- end of imput-group -->
 
-                                        </form>
-                                    </div>
-                                </div>
+                                        </form> 
+                                    </div> <!-- end of card body -->
+                                </div> <!-- end of collapse -->
 
-                            </div>
-                            <!-- Fin d'une template-->
+                            </div> <!-- end of card -->
+                            <!-- Fin d'une carte de la pile -->
              
-                        <!-- Début d'une template-->
-                        <div class="card">
-                            <div class="card-header" id="headingBasics">
-                                <h2 class="mb-0">
-                                    <button id="btnBasics" class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseBasics" aria-expanded="false" aria-controls="collapseBasics">
-                                        Template de base
-                                    </button>
-                                </h2>
-                            </div>
-                            <label for="text-writer">Un carré/rectangle réalise des mouvements basiques de translation.</label>
-                            <div id="collapseBasics" class="collapse" aria-labelledby="headingBasics" data-parent="#accordionTemplate">
-                                <div class="card-body">
-                                     <button id="btnBasicsOne" class="btn basics-template" type="button" >
-                                        Haut/Bas
-                                    </button>
-                                    <button id="btnBasicsTwo" class="btn basics-template" type="button" >
-                                        Gauche/Droite
-                                    </button>
-                                    <button id="btnBasicsThree" class="btn basics-template" type="button" >
-                                        Diagonale
-                                    </button>
-                                    <button id="btnBasicsFour" class="btn basics-template" type="button" >
-                                        Changement de Couleur
-                                    </button>
-
-                                    </div>
+                            <!-- Début d'une carte dans la pile -->
+                            <div class="card">
+                                <div class="card-header" id="headingBasics">
+                                    <h2 class="mb-0">
+                                        <button id="btnBasics" class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseBasics" aria-expanded="false" aria-controls="collapseBasics">
+                                            Template de base
+                                        </button>
+                                    </h2>
                                 </div>
+                                <label for="text-writer">Un carré/rectangle réalise des mouvements basiques de translation.</label>
+                                <div id="collapseBasics" class="collapse" aria-labelledby="headingBasics" data-parent="#accordionTemplate">
+                                    <div class="card-body">
+                                        <button id="btnBasicsOne" class="btn basics-template" type="button" >
+                                            Haut/Bas
+                                        </button>
+                                        <button id="btnBasicsTwo" class="btn basics-template" type="button" >
+                                            Gauche/Droite
+                                        </button>
+                                        <button id="btnBasicsThree" class="btn basics-template" type="button" >
+                                            Diagonale
+                                        </button>
+                                        <button id="btnBasicsFour" class="btn basics-template" type="button" >
+                                            Changement de Couleur
+                                        </button>
 
-                            </div>
+                                    </div> <!-- end of card body -->
+                                </div> <!-- end of collapse -->
 
+                            </div> <!-- end of card -->
+                            <!-- Fin d'une carte de la pile -->
 
-                            <!-- Fin d'une template-->
+                        </div> <!-- end of accordion -->
 
-                        </div>
-
-                    </div>
+                    </div> <!-- end of col -->
 
                     <div class="col-8">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <div id="svgIframe" class="embed-responsive-item"></div>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div id="svgIframe" class="embed-responsive-item">
+
                         </div>
                     </div>
+                    </div> <!-- end of col-8 -->
 
-                </div>
-            </div>
-        </div>
-            </div>
+                </div> <!-- end of row -->
 
-                </div>
-        </main><!-- /.container -->
+            </div> <!-- end of backgroundAnimation -->
+
+        </main><!-- end of container-fluid -->
+
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
         </script>
+
         <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+
         <script src="assets/dist/js/bootstrap.bundle.js"></script>
 
         <script src="assets/dist/js/bootstrap-colorpicker.js"></script>
+
         <script src="assets/dist/js/svg.js"></script>
+
         <script>
             $(function () {
                 // Basic instantiation:
@@ -534,7 +551,7 @@
             $(".basics-template").click(clickBasics);
             clickBasics.apply({id: "btnBasicsOne"});
 
-            $('form#formRebond input#color-picker-square').keypress(function (e) {
+            $('form#formRebond input#color-picker-square-rebond').keypress(function (e) {
                 if (e.which == 13) {
                     console.log( "color =",  $(this).val());
                     $("#animatedRect").attr("fill",$(this).val());
@@ -689,43 +706,50 @@
 
         <script>
             $(document).ready( function() {
-    	$(document).on('change', '.btn-file :file', function() {
-		var input = $(this),
-			label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-		input.trigger('fileselect', [label]);
-		});
+                $(document).on('change', '.btn-file :file', function() {
+                    var input = $(this),
+                    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                    input.trigger('fileselect', [label]);
+                });
 
-		$('.btn-file :file').on('fileselect', function(event, label) {
-		    
-		    var input = $(this).parents('.input-group').find(':text'),
-		        log = label;
-		    
-		    if( input.length ) {
-		        input.val(log);
-		    } else {
-		        if( log ) alert(log);
-		    }
-	    
-		});
-		function readURL(input) {
-		    if (input.files && input.files[0]) {
-		        var reader = new FileReader();
-		        
-		        reader.onload = function (e) {
-                    console.log(e.target.result);
-		            $('#referencePic').attr('src', e.target.result);
-		        }
-		        
-		        reader.readAsDataURL(input.files[0]);
-		    }
-		}
+                $('.btn-file :file').on('fileselect', function(event, label) {
+                    
+                    var input = $(this).parents('.input-group').find(':text'),
+                        log = label;
+                    
+                    if( input.length ) {
+                        input.val(log);
+                    } else {
+                        if( log ) alert(log);
+                    }
+                
+                });
 
-		$("#imgInp").change(function(){
-		    readURL(this);
-		}); 	
-	});
+                function readURL(input) {
+                    if (input.files && input.files[0]) {
+                        var reader = new FileReader();
+
+                        reader.onload = function (e) {
+                            console.log(e.target.result);
+                            $('#referencePic').attr('href', e.target.result);
+                        }
+
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
+
+                $("#imgInp-fond").change(function(){
+                    console.log("readURL ", this);
+                    readURL(this);
+                });
+
+                $("#imgInp-mobile").change(function(){
+                    console.log("readURL ", this);
+                    readURL(this);
+                });  	
+            });
+
         </script>
-
 
     </body>
 
