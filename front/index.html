@@ -52,6 +52,9 @@
         <p align="right"><strong>Conseil:</strong> Appuyez sur la touche "Esc" pour quitter le mode plein écran.</p>
         <button style="float: right;" onclick="openFullscreen();">Ouvrir en Plein Ecran</button>
 
+        <p>Click the button to open a new window called "MsgWindow" with some text.</p>
+        <button onclick="myFunction()">Try it</button>
+
         <main role="main" class="container-fluid">
             <div class="backgroundAnimation">
                 <!-- Début d'une série de colonnes -->
@@ -379,11 +382,10 @@
                     </div> <!-- end of col -->
 
                     <div class="col-8">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <div id="svgIframe" class="embed-responsive-item">
-
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <div id="svgIframe" class="embed-responsive-item">                               
+                            </div>
                         </div>
-                    </div>
                     </div> <!-- end of col-8 -->
 
                 </div> <!-- end of row -->
@@ -749,6 +751,16 @@
                 });  	
             });
 
+        </script>
+
+        <script>
+            function myFunction() {
+            var myWindow = window.open("", "MsgWindow", "width=1920,height=1080,scrollbars=no ,resizable=no,top=0,left=0");
+            // Copy the current content of the svgIframe 
+            var myContent = document.getElementById("svgIframe").cloneNode(true);
+            myWindow.document.body.appendChild(myContent);
+            console.log("Message");
+            }
         </script>
 
     </body>
